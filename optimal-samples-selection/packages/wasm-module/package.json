@@ -1,0 +1,20 @@
+{
+  "name": "@optimal-samples-selection/wasm-module",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/core_algo_wasm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf dist build",
+    "configure": "emcmake cmake -B build -S ../core-algo",
+    "build:wasm": "cmake --build build",
+    "copy:artifacts": "cp build/core_algo_wasm.js dist/ && cp build/core_algo_wasm.wasm dist/",
+    "build:wrapper": "tsc",
+    "build": "npm run clean && npm run configure && npm run build:wasm && mkdir -p dist && npm run copy:artifacts && npm run build:wrapper",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "WebAssembly module and JS/TS wrapper for the core algorithm"
+}

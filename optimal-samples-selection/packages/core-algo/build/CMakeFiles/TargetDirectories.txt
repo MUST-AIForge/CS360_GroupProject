@@ -1,0 +1,17 @@
+/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles/core_algo_lib.dir
+/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles/coverage_calculator_test.dir
+/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles/run_coverage_calculator_test.dir
+/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles/combination_generator_test.dir
+/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles/run_combination_generator_test.dir
+/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles/mode_a_solver_test.dir
+/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles/run_mode_a_solver_test.dir
+/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles/mode_b_solver_test.dir
+/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles/run_mode_b_solver_test.dir
+/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles/mode_c_solver_test.dir
+/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles/run_mode_c_solver_test.dir
+/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles/set_operations_test.dir
+/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles/run_set_operations_test.dir
+/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles/simple_test.dir
+/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles/test.dir
+/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles/edit_cache.dir
+/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",           /* Specify JSX code generation for React */
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "module": "ESNext",           /* Or CommonJS depending on Electron setup */
+    "moduleResolution": "Node",
+    "lib": ["ESNext", "DOM"]     /* Desktop apps often need DOM */
+  },
+  "include": ["src/**/*", "electron/**/*"],
+  "exclude": ["node_modules", "dist"]
+} 

@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-native",        /* Specify JSX code generation for React Native */
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "module": "ESNext",
+    "lib": ["ESNext"],            /* React Native might not need DOM lib */
+    "noEmit": true                /* React Native bundler handles emission */
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "android", "ios"]
+} 

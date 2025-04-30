@@ -1,0 +1,22 @@
+{
+  "name": "optimal-samples-selection-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "tsc -b packages/wasm-module packages/desktop-app",
+    "clean": "rm -rf packages/*/dist tsconfig.tsbuildinfo",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Monorepo for the Optimal Samples Selection System",
+  "devDependencies": {
+    "@types/node": "^22.15.2",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3"
+  }
+}

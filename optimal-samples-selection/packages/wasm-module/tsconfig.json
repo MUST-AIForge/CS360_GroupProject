@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",            /* Output directory for this package */
+    "rootDir": "./src",             /* Root directory for this package's source */
+    "module": "ESNext",           /* Use ESNext for module output, suitable for Wasm integration */
+    "moduleResolution": "Node",    /* Specify module resolution strategy */
+    "allowJs": true,              /* Allow JavaScript files to be imported */
+    "declaration": true,          /* Generate d.ts files */
+    "declarationMap": true,      /* Generate sourcemaps for d.ts files */
+    "isolatedModules": true      /* Ensure each file can be safely transpiled */
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+} 

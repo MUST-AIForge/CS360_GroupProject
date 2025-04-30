@@ -1,0 +1,2 @@
+"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/emsdk/upstream/emscripten/emar" qc libcore_algo_lib.a CMakeFiles/core_algo_lib.dir/src/bindings.cpp.o CMakeFiles/core_algo_lib.dir/src/sample_selector.cpp.o
+"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/emsdk/upstream/emscripten/emranlib" libcore_algo_lib.a
