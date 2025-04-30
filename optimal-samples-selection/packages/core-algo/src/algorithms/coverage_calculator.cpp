@@ -1,5 +1,5 @@
 #include "coverage_calculator.hpp"
-#include "utils/timer.hpp"
+#include "timer.hpp"
 #include <algorithm>
 #include <unordered_set>
 #include <thread>
