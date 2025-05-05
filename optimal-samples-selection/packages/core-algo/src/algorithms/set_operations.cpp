@@ -1,5 +1,5 @@
 #include "set_operations.hpp"
-#include "utils/timer.hpp"
+#include "timer.hpp"
 #include <algorithm>
 #include <unordered_set>
 #include <numeric>
@@ -247,25 +247,12 @@ namespace {
             if (container.empty()) return false;
             if (subset.size() > container.size()) return false;
 
-            // 对于小集合，使用哈希集
-            if (container.size() < 1000) {
+            // 使用哈希集来提高查找效率
             std::unordered_set<int> containerSet(container.begin(), container.end());
-                return std::all_of(subset.begin(), subset.end(),
-                    [&](int elem) { return containerSet.count(elem) > 0; });
-            }
-
-            // 对于大集合，使用二分查找
-            std::vector<int> sortedContainer = container;
-            std::sort(sortedContainer.begin(), sortedContainer.end());
             
+            // 检查subset中的每个元素是否都在container中
             return std::all_of(subset.begin(), subset.end(),
-                [&](int elem) {
-                    return std::binary_search(
-                        sortedContainer.begin(), 
-                        sortedContainer.end(), 
-                        elem
-                    );
-                });
+                [&containerSet](int elem) { return containerSet.find(elem) != containerSet.end(); });
         }
 
         std::vector<int> getAllCombinations(const std::vector<std::vector<int>>& sets) const override {

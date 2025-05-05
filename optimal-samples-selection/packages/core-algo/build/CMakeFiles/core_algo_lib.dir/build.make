@@ -72,10 +72,24 @@ include CMakeFiles/core_algo_lib.dir/flags.make
 CMakeFiles/core_algo_lib.dir/codegen:
 .PHONY : CMakeFiles/core_algo_lib.dir/codegen
 
+CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.o: CMakeFiles/core_algo_lib.dir/flags.make
+CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.o: /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/preprocessor.cpp
+CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.o: CMakeFiles/core_algo_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.o -MF CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.o.d -o CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.o -c "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/preprocessor.cpp"
+
+CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/preprocessor.cpp" > CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.i
+
+CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/preprocessor.cpp" -o CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.s
+
 CMakeFiles/core_algo_lib.dir/src/algorithms/combination_generator.cpp.o: CMakeFiles/core_algo_lib.dir/flags.make
 CMakeFiles/core_algo_lib.dir/src/algorithms/combination_generator.cpp.o: /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/combination_generator.cpp
 CMakeFiles/core_algo_lib.dir/src/algorithms/combination_generator.cpp.o: CMakeFiles/core_algo_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/core_algo_lib.dir/src/algorithms/combination_generator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/core_algo_lib.dir/src/algorithms/combination_generator.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_algo_lib.dir/src/algorithms/combination_generator.cpp.o -MF CMakeFiles/core_algo_lib.dir/src/algorithms/combination_generator.cpp.o.d -o CMakeFiles/core_algo_lib.dir/src/algorithms/combination_generator.cpp.o -c "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/combination_generator.cpp"
 
 CMakeFiles/core_algo_lib.dir/src/algorithms/combination_generator.cpp.i: cmake_force
@@ -86,66 +100,10 @@ CMakeFiles/core_algo_lib.dir/src/algorithms/combination_generator.cpp.s: cmake_f
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core_algo_lib.dir/src/algorithms/combination_generator.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/combination_generator.cpp" -o CMakeFiles/core_algo_lib.dir/src/algorithms/combination_generator.cpp.s
 
-CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o: CMakeFiles/core_algo_lib.dir/flags.make
-CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o: /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/coverage_calculator.cpp
-CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o: CMakeFiles/core_algo_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o -MF CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o.d -o CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o -c "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/coverage_calculator.cpp"
-
-CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/coverage_calculator.cpp" > CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.i
-
-CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/coverage_calculator.cpp" -o CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.s
-
-CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o: CMakeFiles/core_algo_lib.dir/flags.make
-CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o: /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/mode_a_solver.cpp
-CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o: CMakeFiles/core_algo_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o -MF CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o.d -o CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o -c "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/mode_a_solver.cpp"
-
-CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/mode_a_solver.cpp" > CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.i
-
-CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/mode_a_solver.cpp" -o CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.s
-
-CMakeFiles/core_algo_lib.dir/src/algorithms/mode_b_solver.cpp.o: CMakeFiles/core_algo_lib.dir/flags.make
-CMakeFiles/core_algo_lib.dir/src/algorithms/mode_b_solver.cpp.o: /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/mode_b_solver.cpp
-CMakeFiles/core_algo_lib.dir/src/algorithms/mode_b_solver.cpp.o: CMakeFiles/core_algo_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/core_algo_lib.dir/src/algorithms/mode_b_solver.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_algo_lib.dir/src/algorithms/mode_b_solver.cpp.o -MF CMakeFiles/core_algo_lib.dir/src/algorithms/mode_b_solver.cpp.o.d -o CMakeFiles/core_algo_lib.dir/src/algorithms/mode_b_solver.cpp.o -c "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/mode_b_solver.cpp"
-
-CMakeFiles/core_algo_lib.dir/src/algorithms/mode_b_solver.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core_algo_lib.dir/src/algorithms/mode_b_solver.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/mode_b_solver.cpp" > CMakeFiles/core_algo_lib.dir/src/algorithms/mode_b_solver.cpp.i
-
-CMakeFiles/core_algo_lib.dir/src/algorithms/mode_b_solver.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core_algo_lib.dir/src/algorithms/mode_b_solver.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/mode_b_solver.cpp" -o CMakeFiles/core_algo_lib.dir/src/algorithms/mode_b_solver.cpp.s
-
-CMakeFiles/core_algo_lib.dir/src/algorithms/mode_c_solver.cpp.o: CMakeFiles/core_algo_lib.dir/flags.make
-CMakeFiles/core_algo_lib.dir/src/algorithms/mode_c_solver.cpp.o: /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/mode_c_solver.cpp
-CMakeFiles/core_algo_lib.dir/src/algorithms/mode_c_solver.cpp.o: CMakeFiles/core_algo_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/core_algo_lib.dir/src/algorithms/mode_c_solver.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_algo_lib.dir/src/algorithms/mode_c_solver.cpp.o -MF CMakeFiles/core_algo_lib.dir/src/algorithms/mode_c_solver.cpp.o.d -o CMakeFiles/core_algo_lib.dir/src/algorithms/mode_c_solver.cpp.o -c "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/mode_c_solver.cpp"
-
-CMakeFiles/core_algo_lib.dir/src/algorithms/mode_c_solver.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core_algo_lib.dir/src/algorithms/mode_c_solver.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/mode_c_solver.cpp" > CMakeFiles/core_algo_lib.dir/src/algorithms/mode_c_solver.cpp.i
-
-CMakeFiles/core_algo_lib.dir/src/algorithms/mode_c_solver.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core_algo_lib.dir/src/algorithms/mode_c_solver.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/mode_c_solver.cpp" -o CMakeFiles/core_algo_lib.dir/src/algorithms/mode_c_solver.cpp.s
-
 CMakeFiles/core_algo_lib.dir/src/algorithms/set_operations.cpp.o: CMakeFiles/core_algo_lib.dir/flags.make
 CMakeFiles/core_algo_lib.dir/src/algorithms/set_operations.cpp.o: /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/set_operations.cpp
 CMakeFiles/core_algo_lib.dir/src/algorithms/set_operations.cpp.o: CMakeFiles/core_algo_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/core_algo_lib.dir/src/algorithms/set_operations.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/core_algo_lib.dir/src/algorithms/set_operations.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_algo_lib.dir/src/algorithms/set_operations.cpp.o -MF CMakeFiles/core_algo_lib.dir/src/algorithms/set_operations.cpp.o.d -o CMakeFiles/core_algo_lib.dir/src/algorithms/set_operations.cpp.o -c "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/set_operations.cpp"
 
 CMakeFiles/core_algo_lib.dir/src/algorithms/set_operations.cpp.i: cmake_force
@@ -156,75 +114,53 @@ CMakeFiles/core_algo_lib.dir/src/algorithms/set_operations.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core_algo_lib.dir/src/algorithms/set_operations.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/set_operations.cpp" -o CMakeFiles/core_algo_lib.dir/src/algorithms/set_operations.cpp.s
 
-CMakeFiles/core_algo_lib.dir/src/bindings.cpp.o: CMakeFiles/core_algo_lib.dir/flags.make
-CMakeFiles/core_algo_lib.dir/src/bindings.cpp.o: /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/bindings.cpp
-CMakeFiles/core_algo_lib.dir/src/bindings.cpp.o: CMakeFiles/core_algo_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/core_algo_lib.dir/src/bindings.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_algo_lib.dir/src/bindings.cpp.o -MF CMakeFiles/core_algo_lib.dir/src/bindings.cpp.o.d -o CMakeFiles/core_algo_lib.dir/src/bindings.cpp.o -c "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/bindings.cpp"
+CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o: CMakeFiles/core_algo_lib.dir/flags.make
+CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o: /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/mode_a_solver.cpp
+CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o: CMakeFiles/core_algo_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o -MF CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o.d -o CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o -c "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/mode_a_solver.cpp"
 
-CMakeFiles/core_algo_lib.dir/src/bindings.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core_algo_lib.dir/src/bindings.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/bindings.cpp" > CMakeFiles/core_algo_lib.dir/src/bindings.cpp.i
+CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/mode_a_solver.cpp" > CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.i
 
-CMakeFiles/core_algo_lib.dir/src/bindings.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core_algo_lib.dir/src/bindings.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/bindings.cpp" -o CMakeFiles/core_algo_lib.dir/src/bindings.cpp.s
+CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/mode_a_solver.cpp" -o CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.s
 
-CMakeFiles/core_algo_lib.dir/src/sample_selector_interface.cpp.o: CMakeFiles/core_algo_lib.dir/flags.make
-CMakeFiles/core_algo_lib.dir/src/sample_selector_interface.cpp.o: /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/sample_selector_interface.cpp
-CMakeFiles/core_algo_lib.dir/src/sample_selector_interface.cpp.o: CMakeFiles/core_algo_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/core_algo_lib.dir/src/sample_selector_interface.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_algo_lib.dir/src/sample_selector_interface.cpp.o -MF CMakeFiles/core_algo_lib.dir/src/sample_selector_interface.cpp.o.d -o CMakeFiles/core_algo_lib.dir/src/sample_selector_interface.cpp.o -c "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/sample_selector_interface.cpp"
+CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o: CMakeFiles/core_algo_lib.dir/flags.make
+CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o: /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/coverage_calculator.cpp
+CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o: CMakeFiles/core_algo_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o -MF CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o.d -o CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o -c "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/coverage_calculator.cpp"
 
-CMakeFiles/core_algo_lib.dir/src/sample_selector_interface.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core_algo_lib.dir/src/sample_selector_interface.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/sample_selector_interface.cpp" > CMakeFiles/core_algo_lib.dir/src/sample_selector_interface.cpp.i
+CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/coverage_calculator.cpp" > CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.i
 
-CMakeFiles/core_algo_lib.dir/src/sample_selector_interface.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core_algo_lib.dir/src/sample_selector_interface.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/sample_selector_interface.cpp" -o CMakeFiles/core_algo_lib.dir/src/sample_selector_interface.cpp.s
-
-CMakeFiles/core_algo_lib.dir/src/utils/test_reporter.cpp.o: CMakeFiles/core_algo_lib.dir/flags.make
-CMakeFiles/core_algo_lib.dir/src/utils/test_reporter.cpp.o: /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/utils/test_reporter.cpp
-CMakeFiles/core_algo_lib.dir/src/utils/test_reporter.cpp.o: CMakeFiles/core_algo_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/core_algo_lib.dir/src/utils/test_reporter.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/core_algo_lib.dir/src/utils/test_reporter.cpp.o -MF CMakeFiles/core_algo_lib.dir/src/utils/test_reporter.cpp.o.d -o CMakeFiles/core_algo_lib.dir/src/utils/test_reporter.cpp.o -c "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/utils/test_reporter.cpp"
-
-CMakeFiles/core_algo_lib.dir/src/utils/test_reporter.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/core_algo_lib.dir/src/utils/test_reporter.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/utils/test_reporter.cpp" > CMakeFiles/core_algo_lib.dir/src/utils/test_reporter.cpp.i
-
-CMakeFiles/core_algo_lib.dir/src/utils/test_reporter.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core_algo_lib.dir/src/utils/test_reporter.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/utils/test_reporter.cpp" -o CMakeFiles/core_algo_lib.dir/src/utils/test_reporter.cpp.s
+CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/coverage_calculator.cpp" -o CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.s
 
 # Object files for target core_algo_lib
 core_algo_lib_OBJECTS = \
+"CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.o" \
 "CMakeFiles/core_algo_lib.dir/src/algorithms/combination_generator.cpp.o" \
-"CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o" \
-"CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o" \
-"CMakeFiles/core_algo_lib.dir/src/algorithms/mode_b_solver.cpp.o" \
-"CMakeFiles/core_algo_lib.dir/src/algorithms/mode_c_solver.cpp.o" \
 "CMakeFiles/core_algo_lib.dir/src/algorithms/set_operations.cpp.o" \
-"CMakeFiles/core_algo_lib.dir/src/bindings.cpp.o" \
-"CMakeFiles/core_algo_lib.dir/src/sample_selector_interface.cpp.o" \
-"CMakeFiles/core_algo_lib.dir/src/utils/test_reporter.cpp.o"
+"CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o" \
+"CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o"
 
 # External object files for target core_algo_lib
 core_algo_lib_EXTERNAL_OBJECTS =
 
+libcore_algo_lib.a: CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.o
 libcore_algo_lib.a: CMakeFiles/core_algo_lib.dir/src/algorithms/combination_generator.cpp.o
-libcore_algo_lib.a: CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o
-libcore_algo_lib.a: CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o
-libcore_algo_lib.a: CMakeFiles/core_algo_lib.dir/src/algorithms/mode_b_solver.cpp.o
-libcore_algo_lib.a: CMakeFiles/core_algo_lib.dir/src/algorithms/mode_c_solver.cpp.o
 libcore_algo_lib.a: CMakeFiles/core_algo_lib.dir/src/algorithms/set_operations.cpp.o
-libcore_algo_lib.a: CMakeFiles/core_algo_lib.dir/src/bindings.cpp.o
-libcore_algo_lib.a: CMakeFiles/core_algo_lib.dir/src/sample_selector_interface.cpp.o
-libcore_algo_lib.a: CMakeFiles/core_algo_lib.dir/src/utils/test_reporter.cpp.o
+libcore_algo_lib.a: CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o
+libcore_algo_lib.a: CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o
 libcore_algo_lib.a: CMakeFiles/core_algo_lib.dir/build.make
 libcore_algo_lib.a: CMakeFiles/core_algo_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library libcore_algo_lib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libcore_algo_lib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/core_algo_lib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/core_algo_lib.dir/link.txt --verbose=$(VERBOSE)
 

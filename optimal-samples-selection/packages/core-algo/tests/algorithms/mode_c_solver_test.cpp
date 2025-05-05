@@ -13,6 +13,12 @@
 #include <cmath>
 #include <map>
 
+// 添加 GTest main 函数
+int main(int argc, char **argv) {
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+
 namespace core_algo {
 namespace test {
 
@@ -23,13 +29,15 @@ protected:
         config.enableParallel = true;
         m_combGen = CombinationGenerator::create(config);
         m_setOps = SetOperations::create(config);
-        m_solver = ModeCSetCoverSolver::createModeCSetCoverSolver(m_combGen, m_setOps, config);
+        m_covCalc = CoverageCalculator::create(config);
+        m_solver = createModeCSetCoverSolver(m_combGen, m_setOps, m_covCalc, config);
     }
 
     void TearDown() override {
         m_solver.reset();
         m_combGen.reset();
         m_setOps.reset();
+        m_covCalc.reset();
     }
 
     void recordTestProperties(const DetailedSolution& solution) {
@@ -38,11 +46,6 @@ protected:
         testing::Test::RecordProperty("ComputationTime", solution.computationTime);
         testing::Test::RecordProperty("CoverageRatio", solution.coverageRatio);
         testing::Test::RecordProperty("TotalCombinations", solution.totalGroups);
-        
-        if (!solution.metrics.empty()) {
-            testing::Test::RecordProperty("AvgGroupSize", solution.metrics[0]);
-            testing::Test::RecordProperty("InterGroupSimilarity", solution.metrics[1]);
-        }
     }
 
     double evaluateSolutionQuality(const DetailedSolution& solution,
@@ -159,6 +162,7 @@ protected:
 
     std::shared_ptr<CombinationGenerator> m_combGen;
     std::shared_ptr<SetOperations> m_setOps;
+    std::shared_ptr<CoverageCalculator> m_covCalc;
     std::shared_ptr<ModeCSetCoverSolver> m_solver;
 };
 

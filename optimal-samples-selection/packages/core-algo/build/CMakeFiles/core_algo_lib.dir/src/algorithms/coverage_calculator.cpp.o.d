@@ -1,7 +1,6 @@
 CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o: \
   /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/coverage_calculator.cpp \
   /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/include/coverage_calculator.hpp \
-  /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/include/types.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__algorithm/copy.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__algorithm/copy_move_common.h \
@@ -903,7 +902,8 @@ CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/cstdarg \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__memory/temp_value.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__split_buffer \
-  /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/include/utils/timer.hpp \
+  /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/include/types.hpp \
+  /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/include/timer.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/chrono \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__chrono/calendar.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__chrono/convert_to_tm.h \
@@ -975,6 +975,7 @@ CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__format/formatter_tuple.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/print \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/unistd.h \
+  /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/include/set_operations.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/unordered_set \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/thread \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__thread/formatter.h \

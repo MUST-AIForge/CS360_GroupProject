@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20250504-0338-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.31.0"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="macOS"
+	Hostname="Mac.lan"
+	OSRelease="15.3.2"
+	OSVersion="24D81"
+	OSPlatform="arm64"
+	Is64Bits="1"
+	VendorString="Apple"
+	VendorID="Apple"
+	FamilyID="0"
+	ModelID="0"
+	ModelName="Apple M4 Pro"
+	ProcessorCacheSize="131072"
+	NumberOfLogicalCPU="14"
+	NumberOfPhysicalCPU="14"
+	TotalVirtualMemory="5120"
+	TotalPhysicalMemory="24576"
+	LogicalProcessorsPerPhysical="14"
+	ProcessorClockFrequency="0"
+	>
+	<Testing>
+		<StartDateTime>May 04 16:43 CST</StartDateTime>
+		<StartTestTime>1746348223</StartTestTime>
+		<TestList/>
+		<EndDateTime>May 04 16:43 CST</EndDateTime>
+		<EndTestTime>1746348223</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

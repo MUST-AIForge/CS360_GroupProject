@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.o"
-  "CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.o.d"
   "CMakeFiles/mode_a_solver_test.dir/tests/algorithms/mode_a_solver_test.cpp.o"
   "CMakeFiles/mode_a_solver_test.dir/tests/algorithms/mode_a_solver_test.cpp.o.d"
   "mode_a_solver_test"

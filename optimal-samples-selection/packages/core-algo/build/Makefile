@@ -140,58 +140,6 @@ core_algo_lib/fast:
 .PHONY : core_algo_lib/fast
 
 #=============================================================================
-# Target rules for targets named coverage_calculator_test
-
-# Build rule for target.
-coverage_calculator_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 coverage_calculator_test
-.PHONY : coverage_calculator_test
-
-# fast build rule for target.
-coverage_calculator_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/coverage_calculator_test.dir/build.make CMakeFiles/coverage_calculator_test.dir/build
-.PHONY : coverage_calculator_test/fast
-
-#=============================================================================
-# Target rules for targets named run_coverage_calculator_test
-
-# Build rule for target.
-run_coverage_calculator_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_coverage_calculator_test
-.PHONY : run_coverage_calculator_test
-
-# fast build rule for target.
-run_coverage_calculator_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_coverage_calculator_test.dir/build.make CMakeFiles/run_coverage_calculator_test.dir/build
-.PHONY : run_coverage_calculator_test/fast
-
-#=============================================================================
-# Target rules for targets named combination_generator_test
-
-# Build rule for target.
-combination_generator_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 combination_generator_test
-.PHONY : combination_generator_test
-
-# fast build rule for target.
-combination_generator_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/combination_generator_test.dir/build.make CMakeFiles/combination_generator_test.dir/build
-.PHONY : combination_generator_test/fast
-
-#=============================================================================
-# Target rules for targets named run_combination_generator_test
-
-# Build rule for target.
-run_combination_generator_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_combination_generator_test
-.PHONY : run_combination_generator_test
-
-# fast build rule for target.
-run_combination_generator_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_combination_generator_test.dir/build.make CMakeFiles/run_combination_generator_test.dir/build
-.PHONY : run_combination_generator_test/fast
-
-#=============================================================================
 # Target rules for targets named mode_a_solver_test
 
 # Build rule for target.
@@ -218,95 +166,30 @@ run_mode_a_solver_test/fast:
 .PHONY : run_mode_a_solver_test/fast
 
 #=============================================================================
-# Target rules for targets named mode_b_solver_test
+# Target rules for targets named preprocessor_test
 
 # Build rule for target.
-mode_b_solver_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mode_b_solver_test
-.PHONY : mode_b_solver_test
+preprocessor_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preprocessor_test
+.PHONY : preprocessor_test
 
 # fast build rule for target.
-mode_b_solver_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mode_b_solver_test.dir/build.make CMakeFiles/mode_b_solver_test.dir/build
-.PHONY : mode_b_solver_test/fast
+preprocessor_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/preprocessor_test.dir/build.make CMakeFiles/preprocessor_test.dir/build
+.PHONY : preprocessor_test/fast
 
 #=============================================================================
-# Target rules for targets named run_mode_b_solver_test
+# Target rules for targets named run_preprocessor_test
 
 # Build rule for target.
-run_mode_b_solver_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_mode_b_solver_test
-.PHONY : run_mode_b_solver_test
+run_preprocessor_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_preprocessor_test
+.PHONY : run_preprocessor_test
 
 # fast build rule for target.
-run_mode_b_solver_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_mode_b_solver_test.dir/build.make CMakeFiles/run_mode_b_solver_test.dir/build
-.PHONY : run_mode_b_solver_test/fast
-
-#=============================================================================
-# Target rules for targets named mode_c_solver_test
-
-# Build rule for target.
-mode_c_solver_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mode_c_solver_test
-.PHONY : mode_c_solver_test
-
-# fast build rule for target.
-mode_c_solver_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mode_c_solver_test.dir/build.make CMakeFiles/mode_c_solver_test.dir/build
-.PHONY : mode_c_solver_test/fast
-
-#=============================================================================
-# Target rules for targets named run_mode_c_solver_test
-
-# Build rule for target.
-run_mode_c_solver_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_mode_c_solver_test
-.PHONY : run_mode_c_solver_test
-
-# fast build rule for target.
-run_mode_c_solver_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_mode_c_solver_test.dir/build.make CMakeFiles/run_mode_c_solver_test.dir/build
-.PHONY : run_mode_c_solver_test/fast
-
-#=============================================================================
-# Target rules for targets named set_operations_test
-
-# Build rule for target.
-set_operations_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 set_operations_test
-.PHONY : set_operations_test
-
-# fast build rule for target.
-set_operations_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_operations_test.dir/build.make CMakeFiles/set_operations_test.dir/build
-.PHONY : set_operations_test/fast
-
-#=============================================================================
-# Target rules for targets named run_set_operations_test
-
-# Build rule for target.
-run_set_operations_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_set_operations_test
-.PHONY : run_set_operations_test
-
-# fast build rule for target.
-run_set_operations_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_set_operations_test.dir/build.make CMakeFiles/run_set_operations_test.dir/build
-.PHONY : run_set_operations_test/fast
-
-#=============================================================================
-# Target rules for targets named simple_test
-
-# Build rule for target.
-simple_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simple_test
-.PHONY : simple_test
-
-# fast build rule for target.
-simple_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_test.dir/build.make CMakeFiles/simple_test.dir/build
-.PHONY : simple_test/fast
+run_preprocessor_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_preprocessor_test.dir/build.make CMakeFiles/run_preprocessor_test.dir/build
+.PHONY : run_preprocessor_test/fast
 
 src/algorithms/combination_generator.o: src/algorithms/combination_generator.cpp.o
 .PHONY : src/algorithms/combination_generator.o
@@ -380,53 +263,29 @@ src/algorithms/mode_a_solver.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.s
 .PHONY : src/algorithms/mode_a_solver.cpp.s
 
-src/algorithms/mode_b_solver.o: src/algorithms/mode_b_solver.cpp.o
-.PHONY : src/algorithms/mode_b_solver.o
+src/algorithms/preprocessor.o: src/algorithms/preprocessor.cpp.o
+.PHONY : src/algorithms/preprocessor.o
 
 # target to build an object file
-src/algorithms/mode_b_solver.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/algorithms/mode_b_solver.cpp.o
-.PHONY : src/algorithms/mode_b_solver.cpp.o
+src/algorithms/preprocessor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.o
+.PHONY : src/algorithms/preprocessor.cpp.o
 
-src/algorithms/mode_b_solver.i: src/algorithms/mode_b_solver.cpp.i
-.PHONY : src/algorithms/mode_b_solver.i
-
-# target to preprocess a source file
-src/algorithms/mode_b_solver.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/algorithms/mode_b_solver.cpp.i
-.PHONY : src/algorithms/mode_b_solver.cpp.i
-
-src/algorithms/mode_b_solver.s: src/algorithms/mode_b_solver.cpp.s
-.PHONY : src/algorithms/mode_b_solver.s
-
-# target to generate assembly for a file
-src/algorithms/mode_b_solver.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/algorithms/mode_b_solver.cpp.s
-.PHONY : src/algorithms/mode_b_solver.cpp.s
-
-src/algorithms/mode_c_solver.o: src/algorithms/mode_c_solver.cpp.o
-.PHONY : src/algorithms/mode_c_solver.o
-
-# target to build an object file
-src/algorithms/mode_c_solver.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/algorithms/mode_c_solver.cpp.o
-.PHONY : src/algorithms/mode_c_solver.cpp.o
-
-src/algorithms/mode_c_solver.i: src/algorithms/mode_c_solver.cpp.i
-.PHONY : src/algorithms/mode_c_solver.i
+src/algorithms/preprocessor.i: src/algorithms/preprocessor.cpp.i
+.PHONY : src/algorithms/preprocessor.i
 
 # target to preprocess a source file
-src/algorithms/mode_c_solver.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/algorithms/mode_c_solver.cpp.i
-.PHONY : src/algorithms/mode_c_solver.cpp.i
+src/algorithms/preprocessor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.i
+.PHONY : src/algorithms/preprocessor.cpp.i
 
-src/algorithms/mode_c_solver.s: src/algorithms/mode_c_solver.cpp.s
-.PHONY : src/algorithms/mode_c_solver.s
+src/algorithms/preprocessor.s: src/algorithms/preprocessor.cpp.s
+.PHONY : src/algorithms/preprocessor.s
 
 # target to generate assembly for a file
-src/algorithms/mode_c_solver.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/algorithms/mode_c_solver.cpp.s
-.PHONY : src/algorithms/mode_c_solver.cpp.s
+src/algorithms/preprocessor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.s
+.PHONY : src/algorithms/preprocessor.cpp.s
 
 src/algorithms/set_operations.o: src/algorithms/set_operations.cpp.o
 .PHONY : src/algorithms/set_operations.o
@@ -452,165 +311,6 @@ src/algorithms/set_operations.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/algorithms/set_operations.cpp.s
 .PHONY : src/algorithms/set_operations.cpp.s
 
-src/bindings.o: src/bindings.cpp.o
-.PHONY : src/bindings.o
-
-# target to build an object file
-src/bindings.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/bindings.cpp.o
-.PHONY : src/bindings.cpp.o
-
-src/bindings.i: src/bindings.cpp.i
-.PHONY : src/bindings.i
-
-# target to preprocess a source file
-src/bindings.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/bindings.cpp.i
-.PHONY : src/bindings.cpp.i
-
-src/bindings.s: src/bindings.cpp.s
-.PHONY : src/bindings.s
-
-# target to generate assembly for a file
-src/bindings.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/bindings.cpp.s
-.PHONY : src/bindings.cpp.s
-
-src/sample_selector_interface.o: src/sample_selector_interface.cpp.o
-.PHONY : src/sample_selector_interface.o
-
-# target to build an object file
-src/sample_selector_interface.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/sample_selector_interface.cpp.o
-.PHONY : src/sample_selector_interface.cpp.o
-
-src/sample_selector_interface.i: src/sample_selector_interface.cpp.i
-.PHONY : src/sample_selector_interface.i
-
-# target to preprocess a source file
-src/sample_selector_interface.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/sample_selector_interface.cpp.i
-.PHONY : src/sample_selector_interface.cpp.i
-
-src/sample_selector_interface.s: src/sample_selector_interface.cpp.s
-.PHONY : src/sample_selector_interface.s
-
-# target to generate assembly for a file
-src/sample_selector_interface.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/sample_selector_interface.cpp.s
-.PHONY : src/sample_selector_interface.cpp.s
-
-src/utils/test_reporter.o: src/utils/test_reporter.cpp.o
-.PHONY : src/utils/test_reporter.o
-
-# target to build an object file
-src/utils/test_reporter.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/utils/test_reporter.cpp.o
-.PHONY : src/utils/test_reporter.cpp.o
-
-src/utils/test_reporter.i: src/utils/test_reporter.cpp.i
-.PHONY : src/utils/test_reporter.i
-
-# target to preprocess a source file
-src/utils/test_reporter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/utils/test_reporter.cpp.i
-.PHONY : src/utils/test_reporter.cpp.i
-
-src/utils/test_reporter.s: src/utils/test_reporter.cpp.s
-.PHONY : src/utils/test_reporter.s
-
-# target to generate assembly for a file
-src/utils/test_reporter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core_algo_lib.dir/build.make CMakeFiles/core_algo_lib.dir/src/utils/test_reporter.cpp.s
-.PHONY : src/utils/test_reporter.cpp.s
-
-tests/algorithms/combination_generator_test.o: tests/algorithms/combination_generator_test.cpp.o
-.PHONY : tests/algorithms/combination_generator_test.o
-
-# target to build an object file
-tests/algorithms/combination_generator_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/combination_generator_test.dir/build.make CMakeFiles/combination_generator_test.dir/tests/algorithms/combination_generator_test.cpp.o
-.PHONY : tests/algorithms/combination_generator_test.cpp.o
-
-tests/algorithms/combination_generator_test.i: tests/algorithms/combination_generator_test.cpp.i
-.PHONY : tests/algorithms/combination_generator_test.i
-
-# target to preprocess a source file
-tests/algorithms/combination_generator_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/combination_generator_test.dir/build.make CMakeFiles/combination_generator_test.dir/tests/algorithms/combination_generator_test.cpp.i
-.PHONY : tests/algorithms/combination_generator_test.cpp.i
-
-tests/algorithms/combination_generator_test.s: tests/algorithms/combination_generator_test.cpp.s
-.PHONY : tests/algorithms/combination_generator_test.s
-
-# target to generate assembly for a file
-tests/algorithms/combination_generator_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/combination_generator_test.dir/build.make CMakeFiles/combination_generator_test.dir/tests/algorithms/combination_generator_test.cpp.s
-.PHONY : tests/algorithms/combination_generator_test.cpp.s
-
-tests/algorithms/coverage_calculator_test.o: tests/algorithms/coverage_calculator_test.cpp.o
-.PHONY : tests/algorithms/coverage_calculator_test.o
-
-# target to build an object file
-tests/algorithms/coverage_calculator_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/coverage_calculator_test.dir/build.make CMakeFiles/coverage_calculator_test.dir/tests/algorithms/coverage_calculator_test.cpp.o
-.PHONY : tests/algorithms/coverage_calculator_test.cpp.o
-
-tests/algorithms/coverage_calculator_test.i: tests/algorithms/coverage_calculator_test.cpp.i
-.PHONY : tests/algorithms/coverage_calculator_test.i
-
-# target to preprocess a source file
-tests/algorithms/coverage_calculator_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/coverage_calculator_test.dir/build.make CMakeFiles/coverage_calculator_test.dir/tests/algorithms/coverage_calculator_test.cpp.i
-.PHONY : tests/algorithms/coverage_calculator_test.cpp.i
-
-tests/algorithms/coverage_calculator_test.s: tests/algorithms/coverage_calculator_test.cpp.s
-.PHONY : tests/algorithms/coverage_calculator_test.s
-
-# target to generate assembly for a file
-tests/algorithms/coverage_calculator_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/coverage_calculator_test.dir/build.make CMakeFiles/coverage_calculator_test.dir/tests/algorithms/coverage_calculator_test.cpp.s
-.PHONY : tests/algorithms/coverage_calculator_test.cpp.s
-
-tests/algorithms/coverage_calculator_test_main.o: tests/algorithms/coverage_calculator_test_main.cpp.o
-.PHONY : tests/algorithms/coverage_calculator_test_main.o
-
-# target to build an object file
-tests/algorithms/coverage_calculator_test_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/coverage_calculator_test.dir/build.make CMakeFiles/coverage_calculator_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/combination_generator_test.dir/build.make CMakeFiles/combination_generator_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mode_a_solver_test.dir/build.make CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mode_b_solver_test.dir/build.make CMakeFiles/mode_b_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mode_c_solver_test.dir/build.make CMakeFiles/mode_c_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_operations_test.dir/build.make CMakeFiles/set_operations_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.o
-.PHONY : tests/algorithms/coverage_calculator_test_main.cpp.o
-
-tests/algorithms/coverage_calculator_test_main.i: tests/algorithms/coverage_calculator_test_main.cpp.i
-.PHONY : tests/algorithms/coverage_calculator_test_main.i
-
-# target to preprocess a source file
-tests/algorithms/coverage_calculator_test_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/coverage_calculator_test.dir/build.make CMakeFiles/coverage_calculator_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/combination_generator_test.dir/build.make CMakeFiles/combination_generator_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mode_a_solver_test.dir/build.make CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mode_b_solver_test.dir/build.make CMakeFiles/mode_b_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mode_c_solver_test.dir/build.make CMakeFiles/mode_c_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_operations_test.dir/build.make CMakeFiles/set_operations_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.i
-.PHONY : tests/algorithms/coverage_calculator_test_main.cpp.i
-
-tests/algorithms/coverage_calculator_test_main.s: tests/algorithms/coverage_calculator_test_main.cpp.s
-.PHONY : tests/algorithms/coverage_calculator_test_main.s
-
-# target to generate assembly for a file
-tests/algorithms/coverage_calculator_test_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/coverage_calculator_test.dir/build.make CMakeFiles/coverage_calculator_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/combination_generator_test.dir/build.make CMakeFiles/combination_generator_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mode_a_solver_test.dir/build.make CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mode_b_solver_test.dir/build.make CMakeFiles/mode_b_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mode_c_solver_test.dir/build.make CMakeFiles/mode_c_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_operations_test.dir/build.make CMakeFiles/set_operations_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.s
-.PHONY : tests/algorithms/coverage_calculator_test_main.cpp.s
-
 tests/algorithms/mode_a_solver_test.o: tests/algorithms/mode_a_solver_test.cpp.o
 .PHONY : tests/algorithms/mode_a_solver_test.o
 
@@ -635,101 +335,29 @@ tests/algorithms/mode_a_solver_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mode_a_solver_test.dir/build.make CMakeFiles/mode_a_solver_test.dir/tests/algorithms/mode_a_solver_test.cpp.s
 .PHONY : tests/algorithms/mode_a_solver_test.cpp.s
 
-tests/algorithms/mode_b_solver_test.o: tests/algorithms/mode_b_solver_test.cpp.o
-.PHONY : tests/algorithms/mode_b_solver_test.o
+tests/algorithms/preprocessor_test.o: tests/algorithms/preprocessor_test.cpp.o
+.PHONY : tests/algorithms/preprocessor_test.o
 
 # target to build an object file
-tests/algorithms/mode_b_solver_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mode_b_solver_test.dir/build.make CMakeFiles/mode_b_solver_test.dir/tests/algorithms/mode_b_solver_test.cpp.o
-.PHONY : tests/algorithms/mode_b_solver_test.cpp.o
+tests/algorithms/preprocessor_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/preprocessor_test.dir/build.make CMakeFiles/preprocessor_test.dir/tests/algorithms/preprocessor_test.cpp.o
+.PHONY : tests/algorithms/preprocessor_test.cpp.o
 
-tests/algorithms/mode_b_solver_test.i: tests/algorithms/mode_b_solver_test.cpp.i
-.PHONY : tests/algorithms/mode_b_solver_test.i
-
-# target to preprocess a source file
-tests/algorithms/mode_b_solver_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mode_b_solver_test.dir/build.make CMakeFiles/mode_b_solver_test.dir/tests/algorithms/mode_b_solver_test.cpp.i
-.PHONY : tests/algorithms/mode_b_solver_test.cpp.i
-
-tests/algorithms/mode_b_solver_test.s: tests/algorithms/mode_b_solver_test.cpp.s
-.PHONY : tests/algorithms/mode_b_solver_test.s
-
-# target to generate assembly for a file
-tests/algorithms/mode_b_solver_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mode_b_solver_test.dir/build.make CMakeFiles/mode_b_solver_test.dir/tests/algorithms/mode_b_solver_test.cpp.s
-.PHONY : tests/algorithms/mode_b_solver_test.cpp.s
-
-tests/algorithms/mode_c_solver_test.o: tests/algorithms/mode_c_solver_test.cpp.o
-.PHONY : tests/algorithms/mode_c_solver_test.o
-
-# target to build an object file
-tests/algorithms/mode_c_solver_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mode_c_solver_test.dir/build.make CMakeFiles/mode_c_solver_test.dir/tests/algorithms/mode_c_solver_test.cpp.o
-.PHONY : tests/algorithms/mode_c_solver_test.cpp.o
-
-tests/algorithms/mode_c_solver_test.i: tests/algorithms/mode_c_solver_test.cpp.i
-.PHONY : tests/algorithms/mode_c_solver_test.i
+tests/algorithms/preprocessor_test.i: tests/algorithms/preprocessor_test.cpp.i
+.PHONY : tests/algorithms/preprocessor_test.i
 
 # target to preprocess a source file
-tests/algorithms/mode_c_solver_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mode_c_solver_test.dir/build.make CMakeFiles/mode_c_solver_test.dir/tests/algorithms/mode_c_solver_test.cpp.i
-.PHONY : tests/algorithms/mode_c_solver_test.cpp.i
+tests/algorithms/preprocessor_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/preprocessor_test.dir/build.make CMakeFiles/preprocessor_test.dir/tests/algorithms/preprocessor_test.cpp.i
+.PHONY : tests/algorithms/preprocessor_test.cpp.i
 
-tests/algorithms/mode_c_solver_test.s: tests/algorithms/mode_c_solver_test.cpp.s
-.PHONY : tests/algorithms/mode_c_solver_test.s
-
-# target to generate assembly for a file
-tests/algorithms/mode_c_solver_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mode_c_solver_test.dir/build.make CMakeFiles/mode_c_solver_test.dir/tests/algorithms/mode_c_solver_test.cpp.s
-.PHONY : tests/algorithms/mode_c_solver_test.cpp.s
-
-tests/algorithms/set_operations_test.o: tests/algorithms/set_operations_test.cpp.o
-.PHONY : tests/algorithms/set_operations_test.o
-
-# target to build an object file
-tests/algorithms/set_operations_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_operations_test.dir/build.make CMakeFiles/set_operations_test.dir/tests/algorithms/set_operations_test.cpp.o
-.PHONY : tests/algorithms/set_operations_test.cpp.o
-
-tests/algorithms/set_operations_test.i: tests/algorithms/set_operations_test.cpp.i
-.PHONY : tests/algorithms/set_operations_test.i
-
-# target to preprocess a source file
-tests/algorithms/set_operations_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_operations_test.dir/build.make CMakeFiles/set_operations_test.dir/tests/algorithms/set_operations_test.cpp.i
-.PHONY : tests/algorithms/set_operations_test.cpp.i
-
-tests/algorithms/set_operations_test.s: tests/algorithms/set_operations_test.cpp.s
-.PHONY : tests/algorithms/set_operations_test.s
+tests/algorithms/preprocessor_test.s: tests/algorithms/preprocessor_test.cpp.s
+.PHONY : tests/algorithms/preprocessor_test.s
 
 # target to generate assembly for a file
-tests/algorithms/set_operations_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/set_operations_test.dir/build.make CMakeFiles/set_operations_test.dir/tests/algorithms/set_operations_test.cpp.s
-.PHONY : tests/algorithms/set_operations_test.cpp.s
-
-tests/simple_test.o: tests/simple_test.cpp.o
-.PHONY : tests/simple_test.o
-
-# target to build an object file
-tests/simple_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_test.dir/build.make CMakeFiles/simple_test.dir/tests/simple_test.cpp.o
-.PHONY : tests/simple_test.cpp.o
-
-tests/simple_test.i: tests/simple_test.cpp.i
-.PHONY : tests/simple_test.i
-
-# target to preprocess a source file
-tests/simple_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_test.dir/build.make CMakeFiles/simple_test.dir/tests/simple_test.cpp.i
-.PHONY : tests/simple_test.cpp.i
-
-tests/simple_test.s: tests/simple_test.cpp.s
-.PHONY : tests/simple_test.s
-
-# target to generate assembly for a file
-tests/simple_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_test.dir/build.make CMakeFiles/simple_test.dir/tests/simple_test.cpp.s
-.PHONY : tests/simple_test.cpp.s
+tests/algorithms/preprocessor_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/preprocessor_test.dir/build.make CMakeFiles/preprocessor_test.dir/tests/algorithms/preprocessor_test.cpp.s
+.PHONY : tests/algorithms/preprocessor_test.cpp.s
 
 # Help Target
 help:
@@ -740,20 +368,11 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... run_combination_generator_test"
-	@echo "... run_coverage_calculator_test"
 	@echo "... run_mode_a_solver_test"
-	@echo "... run_mode_b_solver_test"
-	@echo "... run_mode_c_solver_test"
-	@echo "... run_set_operations_test"
-	@echo "... combination_generator_test"
+	@echo "... run_preprocessor_test"
 	@echo "... core_algo_lib"
-	@echo "... coverage_calculator_test"
 	@echo "... mode_a_solver_test"
-	@echo "... mode_b_solver_test"
-	@echo "... mode_c_solver_test"
-	@echo "... set_operations_test"
-	@echo "... simple_test"
+	@echo "... preprocessor_test"
 	@echo "... src/algorithms/combination_generator.o"
 	@echo "... src/algorithms/combination_generator.i"
 	@echo "... src/algorithms/combination_generator.s"
@@ -763,48 +382,18 @@ help:
 	@echo "... src/algorithms/mode_a_solver.o"
 	@echo "... src/algorithms/mode_a_solver.i"
 	@echo "... src/algorithms/mode_a_solver.s"
-	@echo "... src/algorithms/mode_b_solver.o"
-	@echo "... src/algorithms/mode_b_solver.i"
-	@echo "... src/algorithms/mode_b_solver.s"
-	@echo "... src/algorithms/mode_c_solver.o"
-	@echo "... src/algorithms/mode_c_solver.i"
-	@echo "... src/algorithms/mode_c_solver.s"
+	@echo "... src/algorithms/preprocessor.o"
+	@echo "... src/algorithms/preprocessor.i"
+	@echo "... src/algorithms/preprocessor.s"
 	@echo "... src/algorithms/set_operations.o"
 	@echo "... src/algorithms/set_operations.i"
 	@echo "... src/algorithms/set_operations.s"
-	@echo "... src/bindings.o"
-	@echo "... src/bindings.i"
-	@echo "... src/bindings.s"
-	@echo "... src/sample_selector_interface.o"
-	@echo "... src/sample_selector_interface.i"
-	@echo "... src/sample_selector_interface.s"
-	@echo "... src/utils/test_reporter.o"
-	@echo "... src/utils/test_reporter.i"
-	@echo "... src/utils/test_reporter.s"
-	@echo "... tests/algorithms/combination_generator_test.o"
-	@echo "... tests/algorithms/combination_generator_test.i"
-	@echo "... tests/algorithms/combination_generator_test.s"
-	@echo "... tests/algorithms/coverage_calculator_test.o"
-	@echo "... tests/algorithms/coverage_calculator_test.i"
-	@echo "... tests/algorithms/coverage_calculator_test.s"
-	@echo "... tests/algorithms/coverage_calculator_test_main.o"
-	@echo "... tests/algorithms/coverage_calculator_test_main.i"
-	@echo "... tests/algorithms/coverage_calculator_test_main.s"
 	@echo "... tests/algorithms/mode_a_solver_test.o"
 	@echo "... tests/algorithms/mode_a_solver_test.i"
 	@echo "... tests/algorithms/mode_a_solver_test.s"
-	@echo "... tests/algorithms/mode_b_solver_test.o"
-	@echo "... tests/algorithms/mode_b_solver_test.i"
-	@echo "... tests/algorithms/mode_b_solver_test.s"
-	@echo "... tests/algorithms/mode_c_solver_test.o"
-	@echo "... tests/algorithms/mode_c_solver_test.i"
-	@echo "... tests/algorithms/mode_c_solver_test.s"
-	@echo "... tests/algorithms/set_operations_test.o"
-	@echo "... tests/algorithms/set_operations_test.i"
-	@echo "... tests/algorithms/set_operations_test.s"
-	@echo "... tests/simple_test.o"
-	@echo "... tests/simple_test.i"
-	@echo "... tests/simple_test.s"
+	@echo "... tests/algorithms/preprocessor_test.o"
+	@echo "... tests/algorithms/preprocessor_test.i"
+	@echo "... tests/algorithms/preprocessor_test.s"
 .PHONY : help
 
 

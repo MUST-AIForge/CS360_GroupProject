@@ -1,4 +1,0 @@
-/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build_wasm/CMakeFiles/core_algo_lib.dir
-/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build_wasm/CMakeFiles/core_algo_wasm.dir
-/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build_wasm/CMakeFiles/edit_cache.dir
-/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build_wasm/CMakeFiles/rebuild_cache.dir

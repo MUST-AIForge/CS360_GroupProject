@@ -231,7 +231,7 @@ bool compareResults(const vector<vector<string>>& solution_groups, const vector<
 
     // 比较排序后的结果
     return sorted_solution == sorted_answer;
-    }
+}
     
 // 实现int版本的compareResults
 bool compareResults(const vector<vector<int>>& solution_groups, const vector<vector<string>>& answer_groups) {
@@ -241,7 +241,7 @@ bool compareResults(const vector<vector<int>>& solution_groups, const vector<vec
         vector<string> converted_group;
         for (int num : group) {
             converted_group.push_back(numToLetter(num));
-    }
+        }
         converted_solution.push_back(converted_group);
     }
     return compareResults(converted_solution, answer_groups);
@@ -311,13 +311,13 @@ void runAllTestCases() {
                 }
                 solution = solver->solve(params.m, params.n, samples, params.k, params.s, params.j);
             } else if (params.mode == 'b') {
-                auto modeBsolver = createModeBSetCoverSolver(combGen, setOps, config);
+                auto modeBsolver = createModeBSetCoverSolver(combGen, setOps, covCalc, config);
                 if (!modeBsolver) {
                     throw runtime_error("无法创建Mode B求解器");
                 }
-                solution = modeBsolver->solve(params.m, params.n, samples, params.k, params.s, params.j, params.N);
+                solution = modeBsolver->solve(params.m, params.n, samples, params.k, params.s, params.j);
             } else {
-                auto modeCsolver = ModeCSetCoverSolver::createModeCSetCoverSolver(combGen, setOps, config);
+                auto modeCsolver = createModeCSetCoverSolver(combGen, setOps, covCalc, config);
                 if (!modeCsolver) {
                     throw runtime_error("无法创建Mode C求解器");
                 }
@@ -381,13 +381,13 @@ void runPerformanceTest(const Parameters& params) {
             }
             solution = solver->solve(params.m, params.n, samples, params.k, params.s, params.j);
         } else if (params.mode == 'b') {
-            auto modeBsolver = createModeBSetCoverSolver(combGen, setOps, config);
+            auto modeBsolver = createModeBSetCoverSolver(combGen, setOps, covCalc, config);
             if (!modeBsolver) {
                 throw runtime_error("无法创建Mode B求解器");
             }
-            solution = modeBsolver->solve(params.m, params.n, samples, params.k, params.s, params.j, params.N);
+            solution = modeBsolver->solve(params.m, params.n, samples, params.k, params.s, params.j);
         } else {
-            auto modeCsolver = ModeCSetCoverSolver::createModeCSetCoverSolver(combGen, setOps, config);
+            auto modeCsolver = createModeCSetCoverSolver(combGen, setOps, covCalc, config);
             if (!modeCsolver) {
                 throw runtime_error("无法创建Mode C求解器");
             }

@@ -1,0 +1,96 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "core-algo",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "core_algo_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-core_algo_lib-Debug-10b300f06447953b5d6a.json",
+					"name" : "core_algo_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mode_a_solver_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mode_a_solver_test-Debug-c1cdb67d95229986f5aa.json",
+					"name" : "mode_a_solver_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "preprocessor_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-preprocessor_test-Debug-d5ad63c3d15a636432cd.json",
+					"name" : "preprocessor_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "run_mode_a_solver_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-run_mode_a_solver_test-Debug-3910d4b61d40c3dcd1f9.json",
+					"name" : "run_mode_a_solver_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "run_preprocessor_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-run_preprocessor_test-Debug-497ba4d2ca13f6ab1746.json",
+					"name" : "run_preprocessor_test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/build",
+		"source" : "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

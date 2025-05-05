@@ -14,11 +14,14 @@ public:
     
     virtual ~CombinationGenerator() = default;
     
+    // 生成随机样本
+    virtual std::vector<int> generateRandomSamples(int m, int n) const = 0;
+    
     // 生成所有r-元组合
     virtual std::vector<std::vector<int>> generate(
         const std::vector<int>& elements,
         int r
-    ) = 0;
+    ) const = 0;
     
     // 获取迭代器（延迟生成）
     virtual std::unique_ptr<Iterator> getIterator(
@@ -38,6 +41,23 @@ public:
         int r,
         int threadCount
     ) = 0;
+    
+    // 新增：生成j组合及其对应的s子集
+    virtual std::pair<std::vector<std::vector<int>>, std::vector<std::vector<std::vector<int>>>> 
+    generateJCombinationsAndSSubsets(int m, int n, int j, int s) = 0;
+    
+    // 为单个j组合生成所有可能的s子集
+    virtual std::vector<std::vector<int>> generateSSubsetsForJCombination(
+        const std::vector<int>& j_combination,
+        int s
+    ) const = 0;
+
+    // 生成组合缓存
+    virtual CombinationCache generateCombinations(
+        const std::vector<int>& samples,
+        int j,
+        int s
+    ) const = 0;
     
     // 工厂方法
     static std::unique_ptr<CombinationGenerator> create(const Config& config = Config());

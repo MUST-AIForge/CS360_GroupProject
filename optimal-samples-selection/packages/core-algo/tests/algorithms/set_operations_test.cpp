@@ -8,6 +8,12 @@
 
 using namespace core_algo;
 
+// 添加 GTest main 函数
+int main(int argc, char **argv) {
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+
 class SetOperationsTest : public ::testing::Test {
 protected:
     void SetUp() override {
@@ -144,24 +150,6 @@ TEST_F(SetOperationsTest, EdgeCases) {
     result = setOps->getUnion(duplicateSets);
     std::vector<int> expected = {1, 2, 3, 4};
     EXPECT_EQ(result, expected);
-}
-
-// 覆盖率计算测试
-TEST_F(SetOperationsTest, CoverageCalculation) {
-    std::vector<std::vector<int>> universe = {{1, 2, 3, 4, 5}};
-    std::vector<std::vector<int>> selectedSets = {{1, 2, 3}};
-    double coverage = setOps->calculateCoverage(universe, selectedSets);
-    EXPECT_DOUBLE_EQ(coverage, 0.6);  // 3/5 = 0.6
-
-    // 测试完全覆盖
-    selectedSets = {{1, 2, 3, 4, 5}};
-    coverage = setOps->calculateCoverage(universe, selectedSets);
-    EXPECT_DOUBLE_EQ(coverage, 1.0);
-
-    // 测试零覆盖
-    selectedSets = {{6, 7, 8}};
-    coverage = setOps->calculateCoverage(universe, selectedSets);
-    EXPECT_DOUBLE_EQ(coverage, 0.0);
 }
 
 // 组合生成测试

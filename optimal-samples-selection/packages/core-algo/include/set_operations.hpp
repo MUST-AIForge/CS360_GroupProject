@@ -21,12 +21,6 @@ public:
         const std::vector<int>& set
     ) const = 0;
 
-    // 计算覆盖率
-    virtual double calculateCoverage(
-        const std::vector<std::vector<int>>& universe,
-        const std::vector<std::vector<int>>& selectedSets
-    ) const = 0;
-
     // 计算多个集合的并集
     virtual std::vector<int> getUnion(
         const std::vector<std::vector<int>>& sets
@@ -68,12 +62,6 @@ public:
 
     // 清理缓存
     virtual void clearCache() = 0;
-
-    // 构建覆盖矩阵
-    virtual std::vector<std::vector<bool>> buildCoverageMatrix(
-        const std::vector<std::vector<int>>& groups,
-        const std::vector<std::vector<int>>& targetGroups
-    ) const = 0;
 
     // 工厂方法
     static std::unique_ptr<SetOperations> create(const Config& config = Config());

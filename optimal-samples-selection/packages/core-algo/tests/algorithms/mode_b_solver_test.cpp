@@ -10,6 +10,12 @@
 #include <map>
 #include <set>
 
+// 添加 GTest main 函数
+int main(int argc, char **argv) {
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+
 namespace core_algo {
 
 class ModeBSolverTest : public ::testing::Test {
@@ -18,7 +24,8 @@ protected:
         Config config;
         m_combGen = CombinationGenerator::create(config);
         m_setOps = SetOperations::create(config);
-        m_solver = createModeBSetCoverSolver(m_combGen, m_setOps, config);
+        m_covCalc = CoverageCalculator::create(config);
+        m_solver = createModeBSetCoverSolver(m_combGen, m_setOps, m_covCalc, config);
     }
 
     bool verifyCoverage(const std::vector<std::vector<int>>& groups,
@@ -53,9 +60,9 @@ protected:
     }
 
     DetailedSolution runWithTimeout(int m, int n, const std::vector<int>& samples,
-                                  int k, int s, int j, int N, int timeoutSeconds) {
+                                  int k, int s, int j, int timeoutSeconds) {
         auto future = std::async(std::launch::async, [&]() {
-            return m_solver->solve(m, n, samples, k, s, j, N);
+            return m_solver->solve(m, n, samples, k, s, j);
         });
 
         auto status = future.wait_for(std::chrono::seconds(timeoutSeconds));
@@ -99,50 +106,48 @@ protected:
 
     std::shared_ptr<CombinationGenerator> m_combGen;
     std::shared_ptr<SetOperations> m_setOps;
+    std::shared_ptr<CoverageCalculator> m_covCalc;
     std::shared_ptr<ModeBSetCoverSolver> m_solver;
 };
 
 TEST_F(ModeBSolverTest, EmptyInput) {
     std::vector<int> samples;
-    auto result = m_solver->solve(0, 0, samples, 0, 0, 0, 0);
+    auto result = m_solver->solve(0, 0, samples, 0, 0, 0);
     EXPECT_EQ(result.status, Status::NoSolution);
 }
 
 TEST_F(ModeBSolverTest, InvalidParameters) {
     std::vector<int> samples = {1, 2, 3};
-    auto result = m_solver->solve(3, 2, samples, 4, 2, 4, 2);
+    auto result = m_solver->solve(3, 2, samples, 4, 2, 4);
     EXPECT_EQ(result.status, Status::NoSolution);
 }
 
 TEST_F(ModeBSolverTest, BasicCoverage) {
     std::vector<int> samples = {1, 2, 3, 4, 5};
-    int N = 2;  // 每个j-group至少被覆盖2次
-    auto result = m_solver->solve(5, 5, samples, 3, 2, 3, N);
+    auto result = m_solver->solve(5, 5, samples, 3, 2, 3);
     
     EXPECT_EQ(result.status, Status::Success);
-    EXPECT_TRUE(verifyCoverage(result.groups, samples, 2, 3, N))
-        << "每个j-group应该至少被覆盖" << N << "次";
+    EXPECT_TRUE(verifyCoverage(result.groups, samples, 2, 3, 2))
+        << "每个j-group应该至少被覆盖2次";
 }
 
 TEST_F(ModeBSolverTest, LargeInput) {
     std::vector<int> samples = {1, 2, 3, 4, 5, 6};
-    int N = 2;  // 每个j-group至少被覆盖2次
-    auto result = m_solver->solve(6, 6, samples, 3, 2, 3, N);
+    auto result = m_solver->solve(6, 6, samples, 3, 2, 3);
     
     EXPECT_EQ(result.status, Status::Success);
-    EXPECT_TRUE(verifyCoverage(result.groups, samples, 2, 3, N))
-        << "每个j-group应该至少被覆盖" << N << "次";
+    EXPECT_TRUE(verifyCoverage(result.groups, samples, 2, 3, 2))
+        << "每个j-group应该至少被覆盖2次";
 }
 
 TEST_F(ModeBSolverTest, EdgeCases) {
     // 测试k=s的情况
     std::vector<int> samples = {1, 2, 3, 4};
-    int N = 1;  // 每个j-group至少被覆盖1次
-    auto result = m_solver->solve(4, 4, samples, 2, 2, 2, N);
+    auto result = m_solver->solve(4, 4, samples, 2, 2, 2);
     
     EXPECT_EQ(result.status, Status::Success);
-    EXPECT_TRUE(verifyCoverage(result.groups, samples, 2, 2, N))
-        << "每个j-group应该至少被覆盖" << N << "次";
+    EXPECT_TRUE(verifyCoverage(result.groups, samples, 2, 2, 1))
+        << "每个j-group应该至少被覆盖1次";
 }
 
 }  // namespace core_algo 

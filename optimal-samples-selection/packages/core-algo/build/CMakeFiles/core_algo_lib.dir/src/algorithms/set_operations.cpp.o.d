@@ -929,7 +929,7 @@ CMakeFiles/core_algo_lib.dir/src/algorithms/set_operations.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__functional/unary_negate.h \
-  /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/include/utils/timer.hpp \
+  /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/include/timer.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/chrono \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__chrono/calendar.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__chrono/convert_to_tm.h \

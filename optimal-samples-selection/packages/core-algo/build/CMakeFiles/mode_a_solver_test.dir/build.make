@@ -86,37 +86,21 @@ CMakeFiles/mode_a_solver_test.dir/tests/algorithms/mode_a_solver_test.cpp.s: cma
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mode_a_solver_test.dir/tests/algorithms/mode_a_solver_test.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/tests/algorithms/mode_a_solver_test.cpp" -o CMakeFiles/mode_a_solver_test.dir/tests/algorithms/mode_a_solver_test.cpp.s
 
-CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.o: CMakeFiles/mode_a_solver_test.dir/flags.make
-CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.o: /Users/leonchen/Nutstore\ Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/tests/algorithms/coverage_calculator_test_main.cpp
-CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.o: CMakeFiles/mode_a_solver_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.o -MF CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.o.d -o CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.o -c "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/tests/algorithms/coverage_calculator_test_main.cpp"
-
-CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/tests/algorithms/coverage_calculator_test_main.cpp" > CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.i
-
-CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/tests/algorithms/coverage_calculator_test_main.cpp" -o CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.s
-
 # Object files for target mode_a_solver_test
 mode_a_solver_test_OBJECTS = \
-"CMakeFiles/mode_a_solver_test.dir/tests/algorithms/mode_a_solver_test.cpp.o" \
-"CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.o"
+"CMakeFiles/mode_a_solver_test.dir/tests/algorithms/mode_a_solver_test.cpp.o"
 
 # External object files for target mode_a_solver_test
 mode_a_solver_test_EXTERNAL_OBJECTS =
 
 mode_a_solver_test: CMakeFiles/mode_a_solver_test.dir/tests/algorithms/mode_a_solver_test.cpp.o
-mode_a_solver_test: CMakeFiles/mode_a_solver_test.dir/tests/algorithms/coverage_calculator_test_main.cpp.o
 mode_a_solver_test: CMakeFiles/mode_a_solver_test.dir/build.make
 mode_a_solver_test: libcore_algo_lib.a
 mode_a_solver_test: /opt/homebrew/lib/libgtest.a
 mode_a_solver_test: /opt/homebrew/lib/libgtest_main.a
 mode_a_solver_test: /opt/homebrew/lib/libgtest.a
 mode_a_solver_test: CMakeFiles/mode_a_solver_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable mode_a_solver_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable mode_a_solver_test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mode_a_solver_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

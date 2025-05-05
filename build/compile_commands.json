@@ -1,0 +1,44 @@
+[
+{
+  "directory": "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/build",
+  "command": "/usr/bin/clang++ -I\"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src\" -I\"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/include\"  -O2 -g -std=c++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -o CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.o -c \"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/preprocessor.cpp\"",
+  "file": "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/preprocessor.cpp",
+  "output": "CMakeFiles/core_algo_lib.dir/src/algorithms/preprocessor.cpp.o"
+},
+{
+  "directory": "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/build",
+  "command": "/usr/bin/clang++ -I\"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src\" -I\"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/include\"  -O2 -g -std=c++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -o CMakeFiles/core_algo_lib.dir/src/algorithms/combination_generator.cpp.o -c \"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/combination_generator.cpp\"",
+  "file": "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/combination_generator.cpp",
+  "output": "CMakeFiles/core_algo_lib.dir/src/algorithms/combination_generator.cpp.o"
+},
+{
+  "directory": "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/build",
+  "command": "/usr/bin/clang++ -I\"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src\" -I\"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/include\"  -O2 -g -std=c++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -o CMakeFiles/core_algo_lib.dir/src/algorithms/set_operations.cpp.o -c \"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/set_operations.cpp\"",
+  "file": "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/set_operations.cpp",
+  "output": "CMakeFiles/core_algo_lib.dir/src/algorithms/set_operations.cpp.o"
+},
+{
+  "directory": "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/build",
+  "command": "/usr/bin/clang++ -I\"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src\" -I\"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/include\"  -O2 -g -std=c++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -o CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o -c \"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/mode_a_solver.cpp\"",
+  "file": "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/mode_a_solver.cpp",
+  "output": "CMakeFiles/core_algo_lib.dir/src/algorithms/mode_a_solver.cpp.o"
+},
+{
+  "directory": "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/build",
+  "command": "/usr/bin/clang++ -I\"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src\" -I\"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/include\"  -O2 -g -std=c++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -o CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o -c \"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/coverage_calculator.cpp\"",
+  "file": "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src/algorithms/coverage_calculator.cpp",
+  "output": "CMakeFiles/core_algo_lib.dir/src/algorithms/coverage_calculator.cpp.o"
+},
+{
+  "directory": "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/build",
+  "command": "/usr/bin/clang++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I\"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src\" -I\"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/include\" -isystem /Users/leonchen/miniconda3/include  -O2 -g -std=c++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -o CMakeFiles/mode_a_solver_test.dir/tests/algorithms/mode_a_solver_test.cpp.o -c \"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/tests/algorithms/mode_a_solver_test.cpp\"",
+  "file": "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/tests/algorithms/mode_a_solver_test.cpp",
+  "output": "CMakeFiles/mode_a_solver_test.dir/tests/algorithms/mode_a_solver_test.cpp.o"
+},
+{
+  "directory": "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/build",
+  "command": "/usr/bin/clang++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I\"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/src\" -I\"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/include\" -isystem /Users/leonchen/miniconda3/include  -O2 -g -std=c++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -o CMakeFiles/preprocessor_test.dir/tests/algorithms/preprocessor_test.cpp.o -c \"/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/tests/algorithms/preprocessor_test.cpp\"",
+  "file": "/Users/leonchen/Nutstore Files/CS/Project/CS360_Assignment/GroupProject/optimal-samples-selection/packages/core-algo/tests/algorithms/preprocessor_test.cpp",
+  "output": "CMakeFiles/preprocessor_test.dir/tests/algorithms/preprocessor_test.cpp.o"
+}
+]

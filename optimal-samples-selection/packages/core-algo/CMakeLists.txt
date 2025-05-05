@@ -26,21 +26,19 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-# Find source files
-file(GLOB_RECURSE SRCS
-    "src/*.cpp"
-    "src/algorithms/*.cpp"
-    "src/models/*.cpp"
-    "src/utils/*.cpp"
+# 只编译 preprocessor.cpp 和其依赖
+set(SRCS
+    "src/algorithms/preprocessor.cpp"
+    "src/algorithms/combination_generator.cpp"
+    "src/algorithms/set_operations.cpp"
+    "src/algorithms/mode_a_solver.cpp"
+    "src/algorithms/coverage_calculator.cpp"
 )
 
-# 排除 test_reporter_main.cpp
-list(FILTER SRCS EXCLUDE REGEX ".*test_reporter_main\\.cpp$")
-
-# Define the core library (static library, suitable for Wasm compilation later)
+# Define the core library
 add_library(core_algo_lib STATIC ${SRCS})
 
-# Optional: Enable testing with CTest (requires test files in tests/)
+# Enable testing with CTest
 enable_testing()
 
 # Find GTest package
@@ -48,57 +46,49 @@ set(CMAKE_PREFIX_PATH "/usr/local/opt/googletest")
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
-# 定义一个函数来创建测试套件
-function(add_test_suite TEST_NAME TEST_SOURCE)
-    # 创建常规测试目标
-    add_executable(${TEST_NAME} 
-        ${TEST_SOURCE}
-        ${CMAKE_CURRENT_SOURCE_DIR}/tests/algorithms/coverage_calculator_test_main.cpp
-    )
-    target_link_libraries(${TEST_NAME}
-        PRIVATE
-        core_algo_lib
-        GTest::gtest
-        GTest::gtest_main
-    )
-    target_include_directories(${TEST_NAME}
-        PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
-        ${CMAKE_CURRENT_SOURCE_DIR}/src
-    )
-    add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
-
-    # 创建run_前缀的目标
-    add_custom_target(run_${TEST_NAME}
-        COMMAND ${CMAKE_COMMAND} --build . --target ${TEST_NAME}
-        COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${TEST_NAME}
-        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-        COMMENT "Building and running ${TEST_NAME}"
-    )
-endfunction()
-
-# 为每个测试文件创建单独的测试套件
-add_test_suite(coverage_calculator_test tests/algorithms/coverage_calculator_test.cpp)
-add_test_suite(combination_generator_test tests/algorithms/combination_generator_test.cpp)
-add_test_suite(mode_a_solver_test tests/algorithms/mode_a_solver_test.cpp)
-add_test_suite(mode_b_solver_test tests/algorithms/mode_b_solver_test.cpp)
-add_test_suite(mode_c_solver_test tests/algorithms/mode_c_solver_test.cpp)
-add_test_suite(set_operations_test tests/algorithms/set_operations_test.cpp)
-
-# 添加simple_test可执行文件
-add_executable(simple_test tests/simple_test.cpp)
-target_link_libraries(simple_test 
-    PRIVATE 
+# 添加 mode_a_solver_test
+add_executable(mode_a_solver_test tests/algorithms/mode_a_solver_test.cpp)
+target_link_libraries(mode_a_solver_test
+    PRIVATE
     core_algo_lib
-    GTest::GTest 
+    GTest::gtest
+    GTest::gtest_main
+)
+target_include_directories(mode_a_solver_test
+    PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+)
+add_test(NAME mode_a_solver_test COMMAND mode_a_solver_test)
+
+# 添加运行目标
+add_custom_target(run_mode_a_solver_test
+    COMMAND ${CMAKE_COMMAND} --build . --target mode_a_solver_test
+    COMMAND ${CMAKE_CURRENT_BINARY_DIR}/mode_a_solver_test
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+    COMMENT "Building and running mode_a_solver_test"
 )
 
-# 添加包含目录
-target_include_directories(simple_test 
-    PRIVATE 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src
+# 只添加 preprocessor_test
+add_executable(preprocessor_test tests/algorithms/preprocessor_test.cpp)
+target_link_libraries(preprocessor_test
+    PRIVATE
+    core_algo_lib
+    GTest::gtest
+)
+target_include_directories(preprocessor_test
+    PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include
-    ${GTEST_INCLUDE_DIRS}
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+)
+add_test(NAME preprocessor_test COMMAND preprocessor_test)
+
+# 添加运行目标
+add_custom_target(run_preprocessor_test
+    COMMAND ${CMAKE_COMMAND} --build . --target preprocessor_test
+    COMMAND ${CMAKE_CURRENT_BINARY_DIR}/preprocessor_test
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+    COMMENT "Building and running preprocessor_test"
 )
 
 # --- Add Emscripten specific configuration later for Wasm compilation ---

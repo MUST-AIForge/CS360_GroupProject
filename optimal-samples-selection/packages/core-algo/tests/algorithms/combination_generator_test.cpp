@@ -3,21 +3,28 @@
 #include <chrono>
 #include <iostream>
 #include <iomanip>
-#include <numeric>  // 添加numeric头文件
+#include <numeric>
+#include <random>
+#include <set>
+#include <algorithm>
 
 using namespace core_algo;
 using namespace std::chrono;
 
+// 添加 GTest main 函数
+int main(int argc, char **argv) {
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+
 class CombinationGeneratorTest : public ::testing::Test {
 protected:
     void SetUp() override {
-        // 在每个测试用例开始前执行的设置
         config = Config();
         generator = CombinationGenerator::create(config);
     }
 
     void TearDown() override {
-        // 在每个测试用例结束后执行的清理
         generator.reset();
     }
 
@@ -27,376 +34,475 @@ protected:
         auto start = high_resolution_clock::now();
         func();
         auto end = high_resolution_clock::now();
-        return duration_cast<microseconds>(end - start).count() / 1000.0; // 转换为毫秒
+        return duration_cast<microseconds>(end - start).count() / 1000.0;
     }
 
-    // 辅助函数：格式化输出性能结果
-    void printPerformanceResult(const std::string& testName, 
-                              double time, 
-                              size_t combinations, 
-                              const std::string& config = "") {
-        std::cout << "\n=== " << testName << " ===\n"
-                  << "Configuration: " << config << "\n"
-                  << "Time: " << std::fixed << std::setprecision(3) << time << " ms\n"
-                  << "Combinations generated: " << combinations << "\n"
-                  << "Average time per combination: " 
-                  << (combinations > 0 ? time / combinations : 0) << " ms\n"
-                  << std::string(50, '-') << std::endl;
+    // 辅助函数：生成指定范围内的随机数
+    int getRandomInRange(int min, int max) {
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_int_distribution<> dis(min, max);
+        return dis(gen);
+    }
+
+    // 辅助函数：生成样本空间
+    std::vector<int> generateSampleSpace(int m) {
+        std::vector<int> samples(m);
+        std::iota(samples.begin(), samples.end(), 1);
+        return samples;
+    }
+
+    // 辅助函数：从样本空间中选择n个样本
+    std::vector<int> selectNSamples(const std::vector<int>& sampleSpace, int n) {
+        std::vector<int> selected = sampleSpace;
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::shuffle(selected.begin(), selected.end(), gen);
+        selected.resize(n);
+        std::sort(selected.begin(), selected.end());
+        return selected;
     }
 
     Config config;
     std::unique_ptr<CombinationGenerator> generator;
 };
 
-TEST_F(CombinationGeneratorTest, GeneratesCorrectCombinations) {
-    std::vector<int> elements = {1, 2, 3, 4};
-    int k = 2;
+// 基本功能测试：验证j组生成
+TEST_F(CombinationGeneratorTest, GenerateJGroups) {
+    // 生成符合范围的随机参数
+    int m = getRandomInRange(45, 54);
+    int n = getRandomInRange(7, std::min(25, m));
+    int j = getRandomInRange(4, 7);
     
-    std::vector<std::vector<int>> expected = {
-        {1, 2}, {1, 3}, {1, 4}, {2, 3}, {2, 4}, {3, 4}
+    std::cout << "\n=== 测试j组生成 ===" << std::endl;
+    std::cout << "参数: m=" << m << ", n=" << n << ", j=" << j << std::endl;
+    
+    // 生成样本空间并选择n个样本
+    auto sampleSpace = generateSampleSpace(m);
+    auto selectedSamples = selectNSamples(sampleSpace, n);
+    
+    // 生成j组
+    auto jGroups = generator->generate(selectedSamples, j);
+    
+    // 验证
+    std::cout << "生成的j组数量: " << jGroups.size() << std::endl;
+    std::cout << "前5个j组示例:" << std::endl;
+    for (size_t i = 0; i < std::min(size_t(5), jGroups.size()); ++i) {
+        std::cout << "  组 " << i << ": {";
+        for (int elem : jGroups[i]) {
+            std::cout << elem << " ";
+        }
+        std::cout << "}" << std::endl;
+    }
+    
+    // 验证每个j组的大小
+    for (const auto& group : jGroups) {
+        EXPECT_EQ(group.size(), j) << "j组大小不正确";
+        // 验证元素都在选定的样本中
+        for (int elem : group) {
+            EXPECT_TRUE(std::find(selectedSamples.begin(), selectedSamples.end(), elem) 
+                       != selectedSamples.end()) << "j组包含未选定的样本";
+        }
+    }
+}
+
+// 测试s子集生成
+TEST_F(CombinationGeneratorTest, GenerateSSubsets) {
+    std::cout << "\n=== 测试s子集生成 ===" << std::endl;
+    
+    // 测试所有合法的j和s组合
+    std::vector<std::pair<int, std::vector<int>>> jsCombinations = {
+        {4, {3, 4}},
+        {5, {3, 4, 5}},
+        {6, {3, 4, 5, 6}},
+        {7, {3, 4, 5, 6, 7}}
     };
     
-    auto actual = generator->generate(elements, k);
-    EXPECT_EQ(actual, expected);
-}
-
-TEST_F(CombinationGeneratorTest, HandlesEmptyInput) {
-    std::vector<int> elements;
-    int k = 2;
-    
-    auto actual = generator->generate(elements, k);
-    EXPECT_TRUE(actual.empty());
-}
-
-TEST_F(CombinationGeneratorTest, HandlesKEqualToN) {
-    std::vector<int> elements = {1, 2, 3};
-    int k = 3;
-    
-    auto actual = generator->generate(elements, k);
-    EXPECT_EQ(actual.size(), 1);
-    EXPECT_EQ(actual[0], elements);
-}
-
-TEST_F(CombinationGeneratorTest, TestIterator) {
-    std::vector<int> elements = {1, 2, 3, 4};
-    int k = 2;
-    
-    auto it = generator->getIterator(elements, k);
-    std::vector<std::vector<int>> actual;
-    
-    while (it->hasNext()) {
-        actual.push_back(it->next());
+    for (const auto& [j, validS] : jsCombinations) {
+        std::cout << "\n测试 j=" << j << " 的所有合法s值" << std::endl;
+        
+        // 生成一个j组作为输入
+        std::vector<int> jGroup(j);
+        std::iota(jGroup.begin(), jGroup.end(), 1);
+        
+        for (int s : validS) {
+            std::cout << "\n  生成 s=" << s << " 的子集" << std::endl;
+            
+            auto sSubsets = generator->generate(jGroup, s);
+            
+            std::cout << "  生成的s子集数量: " << sSubsets.size() << std::endl;
+            std::cout << "  前3个s子集示例:" << std::endl;
+            for (size_t i = 0; i < std::min(size_t(3), sSubsets.size()); ++i) {
+                std::cout << "    子集 " << i << ": {";
+                for (int elem : sSubsets[i]) {
+                    std::cout << elem << " ";
+                }
+                std::cout << "}" << std::endl;
+            }
+            
+            // 验证
+            for (const auto& subset : sSubsets) {
+                // 验证子集大小
+                EXPECT_EQ(subset.size(), s) << "s子集大小不正确";
+                // 验证子集元素都在j组中
+                for (int elem : subset) {
+                    EXPECT_TRUE(std::find(jGroup.begin(), jGroup.end(), elem) 
+                               != jGroup.end()) << "s子集包含不在j组中的元素";
+                }
+            }
+        }
     }
+}
+
+// 性能测试：实际场景
+TEST_F(CombinationGeneratorTest, RealWorldPerformance) {
+    std::cout << "\n=== 实际场景性能测试 ===" << std::endl;
     
-    std::vector<std::vector<int>> expected = {
-        {1, 2}, {1, 3}, {1, 4}, {2, 3}, {2, 4}, {3, 4}
+    // 测试不同规模的输入
+    std::vector<std::tuple<int, int, int, int>> testCases = {
+        // m, n, j, s
+        {45, 7, 4, 3},    // 最小规模
+        {50, 15, 5, 4},   // 中等规模
+        {54, 25, 7, 5}    // 最大规模
     };
     
-    EXPECT_EQ(actual, expected);
-}
-
-// 性能测试：基准测试
-TEST_F(CombinationGeneratorTest, BenchmarkBaseline) {
-    std::vector<int> elements(20);
-    std::iota(elements.begin(), elements.end(), 0);  // 填充0到19
-    const int k = 6;
-    
-    config.enableCache = false;
-    config.enableParallel = false;
-    generator = CombinationGenerator::create(config);
-    
-    double time = measureTime([&]() {
-        auto result = generator->generate(elements, k);
-    });
-    
-    size_t combinations = generator->getCombinationCount(elements.size(), k);
-    printPerformanceResult("Baseline Performance", time, combinations, 
-                          "Cache: Off, Parallel: Off");
-}
-
-// 性能测试：缓存效果
-TEST_F(CombinationGeneratorTest, BenchmarkCaching) {
-    std::vector<int> elements(20);
-    std::iota(elements.begin(), elements.end(), 0);
-    const int k = 6;
-    
-    config.enableCache = true;
-    config.enableParallel = false;
-    generator = CombinationGenerator::create(config);
-    
-    // 第一次调用（无缓存）
-    double firstTime = measureTime([&]() {
-        auto result = generator->generate(elements, k);
-    });
-    
-    // 第二次调用（有缓存）
-    double secondTime = measureTime([&]() {
-        auto result = generator->generate(elements, k);
-    });
-    
-    size_t combinations = generator->getCombinationCount(elements.size(), k);
-    printPerformanceResult("Cache Performance (First Call)", firstTime, combinations,
-                          "Cache: On, Parallel: Off");
-    printPerformanceResult("Cache Performance (Second Call)", secondTime, combinations,
-                          "Cache: On, Parallel: Off");
-}
-
-// 性能测试：并行处理效果
-TEST_F(CombinationGeneratorTest, BenchmarkParallel) {
-    std::vector<int> elements(23);  // 使用较大的输入规模
-    std::iota(elements.begin(), elements.end(), 0);
-    const int k = 7;
-    
-    // 测试不同线程数的性能
-    std::vector<int> threadCounts = {1, 2, 4, 8};
-    
-    config.enableCache = false;
-    config.enableParallel = true;
-    generator = CombinationGenerator::create(config);
-    
-    for (int threads : threadCounts) {
-        double time = measureTime([&]() {
-            auto result = generator->generateParallel(elements, k, threads);
-        });
-        
-        size_t combinations = generator->getCombinationCount(elements.size(), k);
-        printPerformanceResult("Parallel Performance", time, combinations,
-                             "Threads: " + std::to_string(threads));
-    }
-}
-
-// 性能测试：极限情况
-TEST_F(CombinationGeneratorTest, BenchmarkEdgeCases) {
-    // 测试用例1：大n小k
-    {
-        std::vector<int> elements(25);
-        std::iota(elements.begin(), elements.end(), 0);
-        const int k = 4;
-        
-        double time = measureTime([&]() {
-            auto result = generator->generate(elements, k);
-        });
-        
-        size_t combinations = generator->getCombinationCount(elements.size(), k);
-        printPerformanceResult("Edge Case - Large N, Small K", time, combinations,
-                             "N: 25, K: 4");
-    }
-    
-    // 测试用例2：n接近k
-    {
-        std::vector<int> elements(15);
-        std::iota(elements.begin(), elements.end(), 0);
-        const int k = 12;
-        
-        double time = measureTime([&]() {
-            auto result = generator->generate(elements, k);
-        });
-        
-        size_t combinations = generator->getCombinationCount(elements.size(), k);
-        printPerformanceResult("Edge Case - N Close to K", time, combinations,
-                             "N: 15, K: 12");
-    }
-}
-
-// 性能测试：内存池效果
-TEST_F(CombinationGeneratorTest, BenchmarkMemoryPool) {
-    std::vector<int> elements(20);
-    std::iota(elements.begin(), elements.end(), 0);
-    const int k = 6;
-    
-    // 测试多次连续调用的性能
-    const int iterations = 5;
-    double totalTime = 0;
-    
-    for (int i = 0; i < iterations; ++i) {
-        double time = measureTime([&]() {
-            auto result = generator->generate(elements, k);
-        });
-        totalTime += time;
-        
-        size_t combinations = generator->getCombinationCount(elements.size(), k);
-        printPerformanceResult("Memory Pool Performance - Iteration " + std::to_string(i + 1),
-                             time, combinations);
-    }
-    
-    std::cout << "\nAverage time over " << iterations << " iterations: "
-              << (totalTime / iterations) << " ms" << std::endl;
-}
-
-// 性能测试：真实场景模拟
-TEST_F(CombinationGeneratorTest, BenchmarkRealWorldScenario) {
-    struct TestCase {
-        int n;
-        int k;
-        std::string name;
-        size_t cacheThreshold;    // 启用缓存的阈值
-        size_t parallelThreshold; // 启用并行的阈值
-        size_t hybridThreshold;   // 启用混合优化的阈值
-    };
-
-    std::vector<TestCase> testCases = {
-        // 原有测试用例
-        {23, 7, "Mode A测试", 300000, 100000, 1000000},
-        {20, 6, "Mode B测试", 250000, 80000, 1000000},
-        {15, 4, "Mode C测试", 200000, 60000, 1000000},
-        // 大规模测试
-        {25, 8, "大规模测试", 300000, 100000, 1000000},
-        // 超大规模测试，适合混合优化
-        {30, 10, "超大规模测试", 300000, 100000, 1000000},
-        {35, 12, "极限规模测试", 300000, 100000, 1000000}
-    };
-
     for (const auto& testCase : testCases) {
-        std::cout << "\n=== " << testCase.name << " ===\n";
-        std::vector<int> elements(testCase.n);
-        std::iota(elements.begin(), elements.end(), 0);
-
-        // 计算总组合数
-        size_t totalCombinations = generator->getCombinationCount(elements.size(), testCase.k);
-        std::cout << "总组合数: " << totalCombinations << "\n";
-
-        // 基准测试（无优化）
-        config.enableCache = false;
-        config.enableParallel = false;
-        generator = CombinationGenerator::create(config);
+        int m = std::get<0>(testCase);
+        int n = std::get<1>(testCase);
+        int j = std::get<2>(testCase);
+        int s = std::get<3>(testCase);
         
-        double baselineTime = measureTime([&]() {
-            auto result = generator->generate(elements, testCase.k);
+        std::cout << "\n测试规模: m=" << m << ", n=" << n 
+                  << ", j=" << j << ", s=" << s << std::endl;
+        
+        // 生成样本空间和选定样本
+        auto sampleSpace = generateSampleSpace(m);
+        auto selectedSamples = selectNSamples(sampleSpace, n);
+        
+        // 测试j组生成性能
+        double jGroupTime = measureTime([&]() {
+            auto jGroups = generator->generate(selectedSamples, j);
+            std::cout << "生成的j组数量: " << jGroups.size() << std::endl;
+            
+            // 为每个j组生成s子集
+            for (const auto& jGroup : jGroups) {
+                auto sSubsets = generator->generate(jGroup, s);
+            }
         });
-
-        // 根据组合数量决定优化策略
-        bool useCache = totalCombinations >= testCase.cacheThreshold;
-        bool useParallel = totalCombinations >= testCase.parallelThreshold;
-        bool useHybrid = totalCombinations >= testCase.hybridThreshold;
-
-        // 记录性能数据
-        double cacheTime = 0.0, parallelTime = 0.0, hybridTime = 0.0;
-        int optimalThreads = 1;
-        int hybridOptimalThreads = 1;
         
-        // 缓存测试
-        if (useCache) {
-            std::cout << "\n正在测试缓存性能（组合数 >= " << testCase.cacheThreshold << "）...\n";
-            config.enableCache = true;
-            config.enableParallel = false;
-            generator = CombinationGenerator::create(config);
-            
-            const int cacheTestRuns = 3;
-            std::vector<double> cacheTimes;
-            
-            for (int i = 0; i < cacheTestRuns; ++i) {
-                double time = measureTime([&]() {
-                    auto result = generator->generate(elements, testCase.k);
-                });
-                cacheTimes.push_back(time);
-            }
-            
-            cacheTime = (cacheTimes[1] + cacheTimes[2]) / 2;
-        }
+        std::cout << "总执行时间: " << jGroupTime << "ms" << std::endl;
+    }
+}
 
-        // 并行测试
-        if (useParallel) {
-            std::cout << "\n正在测试并行性能（组合数 >= " << testCase.parallelThreshold << "）...\n";
-            config.enableCache = false;
-            config.enableParallel = true;
-            generator = CombinationGenerator::create(config);
-            
-            double bestTime = std::numeric_limits<double>::max();
-            std::vector<int> threadCounts = {1, 2, 4, 8};
-            
-            for (int threads : threadCounts) {
-                double time = measureTime([&]() {
-                    auto result = generator->generateParallel(elements, testCase.k, threads);
-                });
-                
-                if (time < bestTime) {
-                    bestTime = time;
-                    optimalThreads = threads;
+// 边界情况测试
+TEST_F(CombinationGeneratorTest, EdgeCases) {
+    std::cout << "\n=== 边界情况测试 ===" << std::endl;
+    
+    // 测试最小和最大参数组合
+    std::vector<std::tuple<int, int, int>> testCases = {
+        // m, n, j
+        {45, 7, 4},    // 最小值
+        {54, 25, 7},   // 最大值
+        {50, 50, 7},   // n = m 的情况
+        {45, 7, 7}     // j = n 的情况
+    };
+    
+    for (const auto& [m, n, j] : testCases) {
+        std::cout << "\n测试边界情况: m=" << m << ", n=" << n << ", j=" << j << std::endl;
+        
+        auto sampleSpace = generateSampleSpace(m);
+        auto selectedSamples = selectNSamples(sampleSpace, std::min(n, m));
+        
+        auto jGroups = generator->generate(selectedSamples, j);
+        
+        std::cout << "生成的j组数量: " << jGroups.size() << std::endl;
+        if (!jGroups.empty()) {
+            std::cout << "第一个j组: {";
+            for (int elem : jGroups[0]) {
+                std::cout << elem << " ";
+            }
+            std::cout << "}" << std::endl;
+        }
+    }
+}
+
+// 测试随机样本生成
+TEST_F(CombinationGeneratorTest, GenerateRandomSamples) {
+    std::cout << "\n=== 测试随机样本生成 ===" << std::endl;
+    
+    // 测试用例：不同的 m 和 n 组合
+    std::vector<std::pair<int, int>> testCases = {
+        {45, 7},   // 最小规模
+        {50, 15},  // 中等规模
+        {54, 25},  // 最大规模
+        {10, 10},  // m = n 的情况
+        {20, 5}    // 一般情况
+    };
+    
+    for (const auto& [m, n] : testCases) {
+        std::cout << "\n测试参数: m=" << m << ", n=" << n << std::endl;
+        
+        // 生成随机样本
+        auto samples = generator->generateRandomSamples(m, n);
+        
+        // 验证样本数量
+        EXPECT_EQ(samples.size(), n) << "样本数量不正确";
+        
+        // 验证样本范围
+        for (int sample : samples) {
+            EXPECT_GE(sample, 1) << "样本值小于1";
+            EXPECT_LE(sample, m) << "样本值大于m";
+        }
+        
+        // 验证样本唯一性
+        std::set<int> uniqueSamples(samples.begin(), samples.end());
+        EXPECT_EQ(uniqueSamples.size(), samples.size()) << "存在重复样本";
+        
+        // 验证样本是否已排序
+        EXPECT_TRUE(std::is_sorted(samples.begin(), samples.end())) << "样本未排序";
+        
+        std::cout << "生成的样本: {";
+        for (int sample : samples) {
+            std::cout << sample << " ";
+        }
+        std::cout << "}" << std::endl;
+    }
+}
+
+// 测试随机样本生成的异常情况
+TEST_F(CombinationGeneratorTest, GenerateRandomSamplesExceptions) {
+    std::cout << "\n=== 测试随机样本生成异常情况 ===" << std::endl;
+    
+    // 测试 n > m 的情况
+    EXPECT_THROW({
+        generator->generateRandomSamples(5, 10);
+    }, std::invalid_argument) << "当 n > m 时应抛出异常";
+    
+    // 测试边界值
+    EXPECT_NO_THROW({
+        auto samples = generator->generateRandomSamples(10, 10);
+        EXPECT_EQ(samples.size(), 10) << "边界情况 m=n 时样本数量不正确";
+    }) << "边界情况 m=n 应正常执行";
+    
+    // 测试最小值
+    EXPECT_NO_THROW({
+        auto samples = generator->generateRandomSamples(1, 1);
+        EXPECT_EQ(samples.size(), 1) << "最小值情况样本数量不正确";
+        EXPECT_EQ(samples[0], 1) << "最小值情况样本值不正确";
+    }) << "最小值情况应正常执行";
+} 
+
+// 新增：测试generateSSubsetsForJCombination函数
+TEST_F(CombinationGeneratorTest, GenerateSSubsetsForJCombination) {
+    std::cout << "\n=== 测试generateSSubsetsForJCombination函数 ===" << std::endl;
+    
+    // 测试用例1：j=4, s=3
+    {
+        std::vector<int> j_combination = {1, 2, 3, 4};  // 一个j=4的组合
+        int s = 3;
+        
+        std::cout << "\n测试用例1: j=4, s=3" << std::endl;
+        std::cout << "输入j组合: [";
+        for (int elem : j_combination) {
+            std::cout << elem << "(" << static_cast<char>('A' + elem - 1) << ") ";
+        }
+        std::cout << "]" << std::endl;
+        
+        // 计算正确的s子集
+        std::vector<std::vector<int>> expected_subsets = {
+            {1, 2, 3},
+            {1, 2, 4},
+            {1, 3, 4},
+            {2, 3, 4}
+        };
+        
+        std::cout << "期望的s子集:" << std::endl;
+        for (const auto& subset : expected_subsets) {
+            std::cout << "  [";
+            for (int elem : subset) {
+                std::cout << elem << "(" << static_cast<char>('A' + elem - 1) << ") ";
+            }
+            std::cout << "]" << std::endl;
+        }
+        
+        // 生成s子集
+        auto generated_subsets = generator->generateSSubsetsForJCombination(j_combination, s);
+        
+        // 验证结果
+        EXPECT_EQ(generated_subsets.size(), expected_subsets.size()) 
+            << "生成的s子集数量不正确";
+        
+        for (const auto& subset : generated_subsets) {
+            // 验证子集大小
+            EXPECT_EQ(subset.size(), s) << "s子集大小不正确";
+            // 验证子集是否在预期结果中
+            bool found = false;
+            for (const auto& expected : expected_subsets) {
+                if (subset == expected) {
+                    found = true;
+                    break;
                 }
             }
-            
-            parallelTime = bestTime;
-            std::cout << "并行处理最优线程数: " << optimalThreads << "\n";
+            EXPECT_TRUE(found) << "生成了未预期的s子集";
         }
-
-        // 混合优化测试（同时启用缓存和并行）
-        if (useHybrid) {
-            std::cout << "\n正在测试混合优化性能（组合数 >= " << testCase.hybridThreshold << "）...\n";
-            config.enableCache = true;
-            config.enableParallel = true;
-            generator = CombinationGenerator::create(config);
-            
-            double bestHybridTime = std::numeric_limits<double>::max();
-            std::vector<int> threadCounts = {1, 2, 4, 8};
-            
-            // 第一次运行用于预热缓存
-            auto warmupResult = generator->generateParallel(elements, testCase.k, 1);
-            
-            for (int threads : threadCounts) {
-                double time = measureTime([&]() {
-                    auto result = generator->generateParallel(elements, testCase.k, threads);
-                });
-                
-                if (time < bestHybridTime) {
-                    bestHybridTime = time;
-                    hybridOptimalThreads = threads;
+    }
+    
+    // 测试用例2：j=5, s=3
+    {
+        std::vector<int> j_combination = {1, 2, 3, 4, 5};  // 一个j=5的组合
+        int s = 3;
+        
+        std::cout << "\n测试用例2: j=5, s=3" << std::endl;
+        std::cout << "输入j组合: [";
+        for (int elem : j_combination) {
+            std::cout << elem << "(" << static_cast<char>('A' + elem - 1) << ") ";
+        }
+        std::cout << "]" << std::endl;
+        
+        // 计算正确的s子集
+        std::vector<std::vector<int>> expected_subsets = {
+            {1, 2, 3}, {1, 2, 4}, {1, 2, 5},
+            {1, 3, 4}, {1, 3, 5}, {1, 4, 5},
+            {2, 3, 4}, {2, 3, 5}, {2, 4, 5},
+            {3, 4, 5}
+        };
+        
+        std::cout << "期望的s子集:" << std::endl;
+        for (const auto& subset : expected_subsets) {
+            std::cout << "  [";
+            for (int elem : subset) {
+                std::cout << elem << "(" << static_cast<char>('A' + elem - 1) << ") ";
+            }
+            std::cout << "]" << std::endl;
+        }
+        
+        // 生成s子集
+        auto generated_subsets = generator->generateSSubsetsForJCombination(j_combination, s);
+        
+        // 验证结果
+        EXPECT_EQ(generated_subsets.size(), expected_subsets.size()) 
+            << "生成的s子集数量不正确";
+        
+        for (const auto& subset : generated_subsets) {
+            // 验证子集大小
+            EXPECT_EQ(subset.size(), s) << "s子集大小不正确";
+            // 验证子集是否在预期结果中
+            bool found = false;
+            for (const auto& expected : expected_subsets) {
+                if (subset == expected) {
+                    found = true;
+                    break;
                 }
             }
-            
-            hybridTime = bestHybridTime;
-            std::cout << "混合优化最优线程数: " << hybridOptimalThreads << "\n";
+            EXPECT_TRUE(found) << "生成了未预期的s子集";
         }
-
-        // 打印性能结果
-        printPerformanceResult(testCase.name + " - 基准测试", baselineTime, totalCombinations, "无优化");
+    }
+    
+    // 测试用例3：边界情况 j=3, s=3
+    {
+        std::vector<int> j_combination = {1, 2, 3};  // j=s的情况
+        int s = 3;
         
-        if (useCache) {
-            printPerformanceResult(testCase.name + " - 缓存优化", cacheTime, totalCombinations, 
-                                 "启用缓存 (平均" + std::to_string(cacheTime) + "ms)");
-            double cacheImprovement = ((baselineTime - cacheTime) / baselineTime) * 100;
-            std::cout << "缓存优化提升: " << std::fixed << std::setprecision(2) << cacheImprovement << "%\n";
+        std::cout << "\n测试用例3: j=3, s=3 (边界情况：j=s)" << std::endl;
+        std::cout << "输入j组合: [";
+        for (int elem : j_combination) {
+            std::cout << elem << "(" << static_cast<char>('A' + elem - 1) << ") ";
         }
+        std::cout << "]" << std::endl;
         
-        if (useParallel) {
-            printPerformanceResult(testCase.name + " - 并行优化", parallelTime, totalCombinations,
-                                 "启用并行 (" + std::to_string(optimalThreads) + "线程)");
-            double parallelImprovement = ((baselineTime - parallelTime) / baselineTime) * 100;
-            std::cout << "并行优化提升: " << std::fixed << std::setprecision(2) << parallelImprovement << "%\n";
-        }
-
-        if (useHybrid) {
-            printPerformanceResult(testCase.name + " - 混合优化", hybridTime, totalCombinations,
-                                 "启用混合优化 (缓存+" + std::to_string(hybridOptimalThreads) + "线程)");
-            double hybridImprovement = ((baselineTime - hybridTime) / baselineTime) * 100;
-            std::cout << "混合优化提升: " << std::fixed << std::setprecision(2) << hybridImprovement << "%\n";
-        }
-
-        // 选择最佳优化策略
-        std::cout << "\n最佳优化策略: ";
-        if (!useCache && !useParallel && !useHybrid) {
-            std::cout << "数据规模较小，无需优化\n";
-        } else {
-            double bestTime = baselineTime;
-            std::string bestStrategy = "无优化";
-            
-            if (useCache && cacheTime < bestTime) {
-                bestTime = cacheTime;
-                bestStrategy = "使用缓存";
+        // 在j=s的情况下，只应该生成一个子集，就是j组合本身
+        std::vector<std::vector<int>> expected_subsets = {
+            {1, 2, 3}
+        };
+        
+        std::cout << "期望的s子集:" << std::endl;
+        for (const auto& subset : expected_subsets) {
+            std::cout << "  [";
+            for (int elem : subset) {
+                std::cout << elem << "(" << static_cast<char>('A' + elem - 1) << ") ";
             }
-            if (useParallel && parallelTime < bestTime) {
-                bestTime = parallelTime;
-                bestStrategy = "使用并行 (" + std::to_string(optimalThreads) + "线程)";
-            }
-            if (useHybrid && hybridTime < bestTime) {
-                bestTime = hybridTime;
-                bestStrategy = "使用混合优化 (缓存+" + std::to_string(hybridOptimalThreads) + "线程)";
-            }
-            
-            double improvement = ((baselineTime - bestTime) / baselineTime) * 100;
-            std::cout << bestStrategy << " (性能提升: " << std::fixed << std::setprecision(2)
-                     << improvement << "%)\n";
+            std::cout << "]" << std::endl;
         }
         
-        std::cout << std::string(50, '-') << "\n";
+        // 生成s子集
+        auto generated_subsets = generator->generateSSubsetsForJCombination(j_combination, s);
+        
+        // 验证结果
+        EXPECT_EQ(generated_subsets.size(), 1) << "边界情况下应该只生成一个子集";
+        EXPECT_EQ(generated_subsets[0], j_combination) << "生成的子集应该等于输入的j组合";
+    }
+}
+
+// 测试s子集生成的正确性
+TEST_F(CombinationGeneratorTest, MinimalValidParameters) {
+    std::cout << "\n=== 测试最小有效参数的s子集生成 ===" << std::endl;
+    
+    // 测试用例1：j=4, s=3
+    {
+        std::vector<int> j_combination = {1, 2, 3, 4};  // 一个4元素的j组合
+        int s = 3;
+        
+        std::cout << "\n测试用例1: j=4, s=3" << std::endl;
+        auto s_subsets = generator->generateSSubsetsForJCombination(j_combination, s);
+        
+        // 验证生成的子集数量（应该是4C3 = 4个子集）
+        EXPECT_EQ(s_subsets.size(), 4) << "j=4, s=3时子集数量不正确";
+        
+        // 验证每个子集的大小
+        for (const auto& subset : s_subsets) {
+            EXPECT_EQ(subset.size(), s) << "子集大小不等于s";
+        }
+        
+        // 验证生成的所有可能子集
+        std::vector<std::vector<int>> expected_subsets = {
+            {1, 2, 3},
+            {1, 2, 4},
+            {1, 3, 4},
+            {2, 3, 4}
+        };
+        
+        EXPECT_EQ(s_subsets.size(), expected_subsets.size()) << "生成的子集数量与预期不符";
+        for (const auto& expected : expected_subsets) {
+            bool found = false;
+            for (const auto& actual : s_subsets) {
+                if (actual == expected) {
+                    found = true;
+                    break;
+                }
+            }
+            EXPECT_TRUE(found) << "未找到预期的子集";
+        }
+    }
+    
+    // 测试用例2：j=5, s=3
+    {
+        std::vector<int> j_combination = {1, 2, 3, 4, 5};  // 一个5元素的j组合
+        int s = 3;
+        
+        std::cout << "\n测试用例2: j=5, s=3" << std::endl;
+        auto s_subsets = generator->generateSSubsetsForJCombination(j_combination, s);
+        
+        // 验证生成的子集数量（应该是5C3 = 10个子集）
+        EXPECT_EQ(s_subsets.size(), 10) << "j=5, s=3时子集数量不正确";
+        
+        // 验证每个子集的大小
+        for (const auto& subset : s_subsets) {
+            EXPECT_EQ(subset.size(), s) << "子集大小不等于s";
+        }
+    }
+    
+    // 测试用例3：边界情况 j=3, s=3
+    {
+        std::vector<int> j_combination = {1, 2, 3};  // j=s的情况
+        int s = 3;
+        
+        std::cout << "\n测试用例3: j=3, s=3（边界情况）" << std::endl;
+        auto s_subsets = generator->generateSSubsetsForJCombination(j_combination, s);
+        
+        // 验证生成的子集数量（应该只有1个子集）
+        EXPECT_EQ(s_subsets.size(), 1) << "j=s=3时子集数量不正确";
+        
+        // 验证生成的子集
+        EXPECT_EQ(s_subsets[0], j_combination) << "j=s时应该只有一个子集，且等于j组合本身";
     }
 } 
